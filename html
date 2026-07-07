@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Rotaract Club Of Kikuyu | International Service Committee
+</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* ================= BASE ================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+
+body{
+
+height:100vh;
+overflow:hidden;
+background:#000;
+
+color:white;
+
+font-family:'Inter',sans-serif;
+
+}
+
+
+
+/* ================= STAGE ================= */
+
+#stage{
+
+width:100%;
+height:100vh;
+
+position:relative;
+
+}
+
+
+
+/* ================= SCENES ================= */
+
+.scene{
+
+position:absolute;
+
+inset:0;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+opacity:0;
+
+transform:scale(1.05);
+
+
+transition:
+opacity 2.5s ease,
+transform 7s ease;
+
+
+pointer-events:none;
+
+}
+
+
+.scene.active{
+
+opacity:1;
+
+transform:scale(1);
+
+pointer-events:auto;
+
+z-index:2;
+
+}
+
+
+
+
+
+/* ================= BACKGROUND ================= */
+
+
+.scene > img{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+
+filter:
+
+brightness(.45)
+contrast(1.15)
+saturate(.85);
+
+
+transform:scale(1.1);
+
+
+transition:transform 8s ease;
+
+}
+
+
+
+.scene.active > img{
+
+transform:scale(1);
+
+}
+
+
+
+/* ================= OVERLAY ================= */
+
+
+.overlay{
+
+position:absolute;
+
+inset:0;
+
+
+background:
+
+linear-gradient(
+
+rgba(0,35,80,.55),
+
+rgba(0,0,0,.92)
+
+);
+
+}
+
+
+
+
+
+/* ================= CONTENT ================= */
+
+
+.content{
+
+position:relative;
+
+z-index:3;
+
+max-width:1100px;
+
+padding:40px;
+
+}
+
+
+
+.small{
+
+font-size:12px;
+
+letter-spacing:.35em;
+
+opacity:.7;
+
+margin-bottom:20px;
+
+text-transform:uppercase;
+
+}
+
+
+
+h1{
+
+font-family:'Playfair Display',serif;
+
+font-size:clamp(2rem,5vw,4.5rem);
+
+line-height:1.15;
+
+opacity:0;
+
+transform:translateY(30px);
+
+transition:2.5s ease;
+
+}
+
+
+
+p{
+
+margin-top:20px;
+
+font-size:20px;
+
+line-height:1.8;
+
+font-weight:300;
+
+
+opacity:0;
+
+transform:translateY(30px);
+
+transition:3s ease;
+
+}
+
+
+
+.role{
+
+margin-top:25px;
+
+font-size:16px;
+
+line-height:2;
+
+
+opacity:0;
+
+transform:translateY(30px);
+
+transition:3.5s ease;
+
+}
+
+
+
+
+
+.scene.active h1,
+.scene.active p,
+.scene.active .role{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+
+
+
+/* ================= LEADER PROFILE ================= */
+
+
+.leader{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:70px;
+
+}
+
+
+
+.profile{
+
+width:240px;
+
+height:240px;
+
+border-radius:50%;
+
+overflow:hidden;
+
+border:5px solid #FFD700;
+
+
+box-shadow:
+
+0 0 40px rgba(255,215,0,.5);
+
+flex-shrink:0;
+
+}
+
+
+
+.profile img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+
+
+.leader-info{
+
+max-width:650px;
+
+text-align:left;
+
+}
+
+
+
+
+.gold{
+
+color:#FFD700;
+
+}
+
+
+
+
+
+/* ================= TOP LABEL ================= */
+
+
+.progress{
+
+position:fixed;
+
+top:25px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+
+font-size:11px;
+
+letter-spacing:.35em;
+
+opacity:.6;
+
+z-index:10;
+
+}
+
+
+
+
+
+/* ================= FADE ================= */
+
+
+.fade{
+
+position:fixed;
+
+inset:0;
+
+background:#000;
+
+opacity:0;
+
+pointer-events:none;
+
+transition:opacity 1.5s ease;
+
+z-index:20;
+
+}
+
+
+.fade.on{
+
+opacity:1;
+
+}
+
+
+
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+
+.leader{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+
+.profile{
+
+width:160px;
+
+height:160px;
+
+}
+
+
+.leader-info{
+
+text-align:center;
+
+}
+
+
+.role{
+
+font-size:14px;
+
+}
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+
+<body>
+
+
+
+<div class="progress">
+
+ROTARACT CLUB OF KIKUYU 
+
+</div>
+
+
+<div class="fade" id="fade"></div>
+
+
+
+<div id="stage">
+
+
+
+
+
+<!-- INTRO -->
+
+<div class="scene active">
+
+
+<img src="images/world.jpg">
+
+
+<div class="overlay"></div>
+
+
+<div class="content">
+
+
+<div class="small">
+International Service Committee
+</div>
+
+
+<h1>
+Creating connections beyond borders.
+</h1>
+
+
+<p>
+A team committed to partnerships,
+culture and sustainable service.
+</p>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<!-- THEME -->
+
+<div class="scene">
+
+<img src="images/community.jpg">
+
+<div class="overlay"></div>
+
+
+<div class="content">
+
+
+<div class="small">
+Our Theme
+</div>
+
+
+<h1 class="gold">
+Creating A Lasting Impact
+</h1>
+
+
+<p>
+Building meaningful partnerships.
+Promoting global understanding.
+Serving communities.
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- LEADER TEMPLATE 1 -->
+
+<div class="scene">
+
+<img src="images/community.jpg">
+
+<div class="overlay"></div>
+
+
+<div class="content">
+
+
+<div class="leader">
+
+
+<div class="profile">
+    <img src="attachments/1  new.jpeg" alt="Leader Profile" >
+</div>
+
+
+<div class="leader-info">
+
+<div class="small">
+Rtr Newton Kinywa
+</div>
+
+
+<h1>
+International Service Director
+</h1>
+
+
+<p>
+Strategic leadership of the committee.
+</p>
+
+
+<div class="role">
+
+• Provides strategic leadership<br>
+• Represents the committee at club, district and international forums<br>
+• Oversees partnerships, projects and reporting<br>
+• Ensures committee goals are achieved
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- LEADER 2 -->
+
+<div class="scene">
+
+<img src="images/world.jpg">
+
+<div class="overlay"></div>
+
+
+<div class="content">
+
+
+<div class="leader">
+
+
+<div class="profile">
+    <img src="attachments/2.png" alt="Leader Profile">
+</div>
+
+
+
+<div class="leader-info">
+
+<div class="small">
+Christine Mwaura
+</div>
+
+
+<h1>
+Country Partnerships Lead
+</h1>
+
+
+<p>
+Strengthening connections within Kenya.
+</p>
+
+
+<div class="role">
+
+• Builds partnerships within Kenya<br>
+• Works with Rotary, Rotaract clubs, NGOs and institutions<br>
+• Coordinates joint projects<br>
+• Strengthens local networks
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- LEADER 3 -->
+
+<div class="scene">
+
+<img src="images/world.jpg">
+
+<div class="overlay"></div>
+
+
+<div class="content">
+
+<div class="leader">
+
+<div class="profile">
+    <img src="attachments/3.png" alt="Leader Profile">
+</div>
+
+
+<div class="leader-info">
+
+
+<div class="small">
+Linnet Muturi
+</div>
+
+
+<h1>
+International Partnerships Lead
+</h1>
+
+
+<p>
+Connecting the world through collaboration.
+</p>
+
+
+<div class="role">
+
+• Builds partnerships outside Kenya<br>
+• Creates sister club relationships<br>
+• Coordinates international projects<br>
+• Explores global opportunities
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- LEADER 4 -->
+
+<div class="scene">
+
+<src="images/community.jpg">
+
+<div class="overlay"></div>
+
+
+<div class="content">
+
+<div class="leader">
+
+
+
+<div class="profile">
+    <img src="attachments/4.jpeg" alt="Leader Profile">
+</div>
+
+
+<div class="leader-info">
+
+<div class="small">
+Victor Onyango
+</div>
+
+
+<h1>
+Cultural Exchange & Creative Lead
+</h1>
+
+
+<p>
+Celebrating diversity and friendship.
+</p>
+
+
+<div class="role">
+
+• Designs cultural exchange programmes<br>
+• Creates international activities<br>
+• Promotes diversity and inclusion<br>
+• Strengthens global understanding
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- LEADER 5 -->
+
+<div class="scene">
+
+<img src="images/world.jpg">
+
+<div class="overlay"></div>
+
+
+<div class="content">
+
+
+<div class="leader">
+
+<div class="profile">
+    <img src="attachments/5.new.png" alt="Leader Profile">
+</div>
+
+
+
+<div class="leader-info">
+
+
+<div class="small">
+Georgina Njambi
+</div>
+
+
+<h1>
+Communications & Networking Lead
+</h1>
+
+
+<p>
+Keeping partnerships connected.
+</p>
+
+
+<div class="role">
+
+• Manages communications<br>
+• Handles updates and meetings<br>
+• Maintains partnership database<br>
+• Promotes committee activities
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- LEADER 6 -->
+
+
+<div class="scene">
+
+<img src="images/community.jpg">
+
+<div class="overlay"></div>
+
+
+<div class="content">
+
+
+<div class="leader">
+
+
+<div class="profile">
+    <img src="attachments/6. new.png" alt="Leader Profile">
+</div>
+
+
+
+<div class="leader-info">
+
+
+<div class="small">
+Daniel Kioi
+</div>
+
+
+<h1>
+Monitoring, Evaluation & Reporting Lead
+</h1>
+
+
+<p>
+Turning activities into measurable impact.
+</p>
+
+
+<div class="role">
+
+• Monitors projects<br>
+• Maintains records<br>
+• Creates impact stories<br>
+• Evaluates outcomes
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- LEADER 7 -->
+
+<div class="scene">
+
+<img src="images/community.jpg">
+
+<div class="overlay"></div>
+
+
+<div class="content">
+
+
+<div class="leader">
+
+
+<div class="profile">
+    <img src="attachments/7.png" alt="Leader Profile">
+</div>
+
+
+<div class="leader-info">
+
+
+<div class="small">
+Bilha Njeri
+</div>
+
+
+<h1>
+Projects & Sustainability Lead
+</h1>
+
+
+<p>
+Creating solutions that last.
+</p>
+
+
+<div class="role">
+
+• Plans service projects<br>
+• Coordinates implementation<br>
+• Works with partners<br>
+• Promotes sustainability
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- FINAL -->
+
+<div class="scene">
+
+<img src="images/team.jpg">
+
+<div class="overlay"></div>
+
+
+<div class="content">
+
+
+<div class="small">
+Our Purpose
+</div>
+
+
+<h1>
+One Committee.<br>
+One Mission.<br>
+One Lasting Impact.
+</h1>
+
+
+<p>
+
+To build meaningful partnerships,
+promote global understanding,
+and deliver sustainable service
+in our community and beyond.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+const scenes=document.querySelectorAll(".scene");
+
+const fade=document.getElementById("fade");
+
+
+const timings=[
+
+7000,
+8000,
+10000,
+10000,
+10000,
+10000,
+10000,
+10000,
+10000
+
+];
+
+
+let index=0;
+
+
+
+function show(i){
+
+
+fade.classList.add("on");
+
+
+setTimeout(()=>{
+
+
+scenes.forEach(s=>
+s.classList.remove("active")
+);
+
+
+scenes[i].classList.add("active");
+
+
+
+setTimeout(()=>{
+
+fade.classList.remove("on");
+
+},500);
+
+
+
+},700);
+
+
+}
+
+
+
+function play(){
+
+
+show(index);
+
+
+
+setTimeout(()=>{
+
+
+index++;
+
+
+if(index>=scenes.length){
+
+index=0;
+
+}
+
+
+play();
+
+
+
+},timings[index]);
+
+
+}
+
+
+
+window.onload=()=>{
+
+
+setTimeout(()=>{
+
+play();
+
+},1200);
+
+
+};
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
