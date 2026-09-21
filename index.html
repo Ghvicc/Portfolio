@@ -1,1013 +1,936 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Onyango Victor — Founder, engineer and creative director working across culture, fashion, art, sound, sport, community and creative ventures." />
 
-<title>Onyango Victor — Founder of GhViƆɔ</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
+<title>Onyango Victor — Founder & Creative</title> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"> <style>
 :root{
-  --bg:#070707;
-  --surface:#111111;
-  --text:#f5f5f5;
-  --muted:#9ca3af;
-  --accent:#c7a76c;
-  --line:rgba(255,255,255,0.08);
+--bg:#070707;
+--surface:#111111;
+--text:#f5f5f5;
+--muted:#9ca3af;
+--accent:#c7a76c;
+--line:rgba(255,255,255,0.08);
 }
 
 .light{
-  --bg:#f5f1ea;
-  --surface:#ffffff;
-  --text:#111111;
-  --muted:#5f6368;
-  --accent:#9d7b46;
-  --line:rgba(0,0,0,0.08);
+--bg:#f5f1ea;
+--surface:#ffffff;
+--text:#111111;
+--muted:#5f6368;
+--accent:#9d7b46;
+--line:rgba(0,0,0,0.08);
 }
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:'Inter',sans-serif;
-  transition:0.4s ease;
-  overflow-x:hidden;
+background:var(--bg);
+color:var(--text);
+font-family:'Inter',sans-serif;
+transition:0.4s ease;
+overflow-x:hidden;
+}
+
+a{
+color:inherit;
 }
 
 /* =========================
-   HERO
+HERO
 ========================= */
 
 .hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:0 10%;
-  position:relative;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:0 10%;
+position:relative;
 
-  background:
-  radial-gradient(circle at top left, rgba(199,167,108,0.12), transparent 35%),
-  radial-gradient(circle at bottom right, rgba(255,255,255,0.03), transparent 40%);
+background:
+radial-gradient(circle at top left, rgba(199,167,108,0.12), transparent 35%),
+radial-gradient(circle at bottom right, rgba(255,255,255,0.03), transparent 40%);
 }
 
 .hero-inner{
-  max-width:950px;
+max-width:1000px;
 }
 
 .eyebrow{
-  letter-spacing:0.32em;
-  text-transform:uppercase;
-  color:var(--accent);
-  font-size:11px;
-  margin-bottom:24px;
+letter-spacing:0.32em;
+text-transform:uppercase;
+color:var(--accent);
+font-size:11px;
+margin-bottom:24px;
 }
 
 .hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:6rem;
-  line-height:0.95;
-  letter-spacing:-3px;
-  font-weight:600;
+font-family:'Playfair Display',serif;
+font-size:clamp(4rem,8vw,7rem);
+line-height:0.95;
+letter-spacing:-3px;
+font-weight:600;
 }
 
 .hero p{
-  margin:40px auto 0;
-  max-width:760px;
-  color:var(--muted);
-  line-height:2;
-  font-size:1.05rem;
+margin:40px auto 0;
+max-width:780px;
+color:var(--muted);
+line-height:2;
+font-size:1.05rem;
 }
 
 /* =========================
-   BUTTONS
+BUTTONS
 ========================= */
 
 .actions{
-  margin-top:45px;
-  display:flex;
-  justify-content:center;
-  gap:16px;
-  flex-wrap:wrap;
+margin-top:45px;
+display:flex;
+justify-content:center;
+gap:16px;
+flex-wrap:wrap;
 }
 
 .btn{
-  padding:14px 24px;
-  border-radius:14px;
-  text-decoration:none;
-  font-size:0.9rem;
-  transition:0.3s ease;
+padding:14px 24px;
+border-radius:14px;
+text-decoration:none;
+font-size:0.9rem;
+transition:0.3s ease;
 }
 
 .primary{
-  background:var(--accent);
-  color:#111;
+background:var(--accent);
+color:#111;
 }
 
 .primary:hover{
-  transform:translateY(-3px);
+transform:translateY(-3px);
 }
 
 .secondary{
-  border:1px solid var(--line);
-  color:var(--text);
+border:1px solid var(--line);
+color:var(--text);
 }
 
 .secondary:hover{
-  border-color:var(--accent);
-  color:var(--accent);
+border-color:var(--accent);
+color:var(--accent);
 }
 
 /* =========================
-   SECTIONS
+SECTIONS
 ========================= */
 
 .section{
-  max-width:980px;
-  margin:auto;
-  padding:140px 24px;
+max-width:980px;
+margin:auto;
+padding:140px 24px;
 }
 
 .section-title{
-  font-family:'Playfair Display',serif;
-  font-size:3rem;
-  margin-bottom:50px;
-  letter-spacing:-1px;
-  position:relative;
+font-family:'Playfair Display',serif;
+font-size:3rem;
+margin-bottom:50px;
+letter-spacing:-1px;
+position:relative;
 }
 
 .section-title::before{
-  content:"";
-  width:50px;
-  height:1px;
-  background:var(--accent);
-  display:block;
-  margin-bottom:18px;
+content:"";
+width:50px;
+height:1px;
+background:var(--accent);
+display:block;
+margin-bottom:18px;
 }
 
 .text{
-  max-width:760px;
-  color:var(--muted);
-  line-height:2;
-  font-size:1.04rem;
+max-width:780px;
+color:var(--muted);
+line-height:2;
+font-size:1.04rem;
 }
 
 .text p{
-  margin-bottom:24px;
+margin-bottom:24px;
 }
 
 /* =========================
-   IMAGE
+IMAGE
 ========================= */
 
 .image{
-  width:100%;
-  margin-top:45px;
-  border-radius:24px;
-  overflow:hidden;
-  border:1px solid var(--line);
+width:100%;
+margin-top:45px;
+border-radius:24px;
+overflow:hidden;
+border:1px solid var(--line);
+background:var(--surface);
 }
 
 .image img{
-  width:100%;
-  display:block;
-  transition:0.6s ease;
+width:100%;
+display:block;
+transition:0.6s ease;
 }
 
 .image img:hover{
-  transform:scale(1.03);
+transform:scale(1.03);
 }
 
 /* =========================
-   GRID
+GRID
 ========================= */
 
 .grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:28px;
-  margin-top:45px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:28px;
+margin-top:45px;
 }
 
 /* =========================
-   THINKING
+THINKING
 ========================= */
 
 .thought{
-  padding:34px;
-  border:1px solid var(--line);
-  border-radius:24px;
-  background:rgba(255,255,255,0.02);
-  margin-bottom:24px;
+padding:34px;
+border:1px solid var(--line);
+border-radius:24px;
+background:rgba(255,255,255,0.02);
+margin-bottom:24px;
 }
 
 .light .thought{
-  background:rgba(0,0,0,0.02);
+background:rgba(0,0,0,0.02);
 }
 
 .thought h3{
-  margin-bottom:14px;
-  font-size:1.1rem;
+margin-bottom:14px;
+font-size:1.1rem;
 }
 
 .thought p{
-  color:var(--muted);
-  line-height:1.9;
+color:var(--muted);
+line-height:1.9;
 }
 
 /* =========================
-   QUOTE
+QUOTE
 ========================= */
 
 .quote{
-  font-family:'Playfair Display',serif;
-  font-size:2rem;
-  line-height:1.5;
-  color:var(--text);
-  margin-top:35px;
+font-family:'Playfair Display',serif;
+font-size:2rem;
+line-height:1.5;
+color:var(--text);
+margin-top:35px;
 }
 
 /* =========================
-   AREAS OF WORK
+AREAS OF WORK
 ========================= */
 
 .work-item{
-  padding:32px 0;
-  border-top:1px solid var(--line);
+padding:32px 0;
+border-top:1px solid var(--line);
 }
 
 .work-item:last-child{
-  border-bottom:1px solid var(--line);
+border-bottom:1px solid var(--line);
 }
 
 .work-number{
-  color:var(--accent);
-  font-size:11px;
-  letter-spacing:0.2em;
-  margin-bottom:12px;
+color:var(--accent);
+font-size:11px;
+letter-spacing:0.2em;
+margin-bottom:12px;
 }
 
 .work-item h3{
-  font-family:'Playfair Display',serif;
-  font-size:1.7rem;
-  font-weight:500;
-  margin-bottom:12px;
+font-family:'Playfair Display',serif;
+font-size:1.7rem;
+font-weight:500;
+margin-bottom:12px;
 }
 
 .work-item p{
-  max-width:700px;
-  color:var(--muted);
-  line-height:1.9;
+max-width:720px;
+color:var(--muted);
+line-height:1.9;
 }
 
 /* =========================
-   SOCIALS
+PROJECT CARDS
+========================= */
+
+.project{
+border:1px solid var(--line);
+border-radius:24px;
+padding:32px;
+margin-bottom:22px;
+background:rgba(255,255,255,0.015);
+transition:0.3s ease;
+}
+
+.project:hover{
+transform:translateY(-4px);
+border-color:rgba(199,167,108,0.45);
+}
+
+.project-label{
+color:var(--accent);
+font-size:10px;
+letter-spacing:0.2em;
+text-transform:uppercase;
+margin-bottom:12px;
+}
+
+.project h3{
+font-family:'Playfair Display',serif;
+font-size:1.8rem;
+margin-bottom:12px;
+}
+
+.project p{
+color:var(--muted);
+line-height:1.9;
+}
+
+.project-link{
+display:inline-block;
+margin-top:18px;
+color:var(--text);
+font-size:0.85rem;
+border-bottom:1px solid var(--accent);
+padding-bottom:3px;
+}
+
+/* =========================
+SOCIALS
 ========================= */
 
 .social-wrap{
-  display:flex;
-  justify-content:center;
-  gap:14px;
-  margin-top:30px;
-  flex-wrap:wrap;
+display:flex;
+justify-content:center;
+gap:14px;
+margin-top:30px;
+flex-wrap:wrap;
 }
 
 .social{
-  width:42px;
-  height:42px;
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,0.03);
-  transition:0.3s ease;
+width:42px;
+height:42px;
+border-radius:12px;
+display:flex;
+align-items:center;
+justify-content:center;
+border:1px solid var(--line);
+background:rgba(255,255,255,0.03);
+transition:0.3s ease;
 }
 
 .social:hover{
-  transform:translateY(-3px);
-  border-color:var(--accent);
+transform:translateY(-3px);
+border-color:var(--accent);
 }
 
 .social img{
-  width:18px;
-  height:18px;
-  opacity:0.9;
+width:18px;
+height:18px;
+opacity:0.9;
 }
 
 /* =========================
-   FOOTER
+FOOTER
 ========================= */
 
 footer{
-  padding:100px 24px;
-  text-align:center;
-  border-top:1px solid var(--line);
+padding:100px 24px;
+text-align:center;
+border-top:1px solid var(--line);
 }
 
 footer p{
-  color:var(--muted);
-  font-size:0.9rem;
-  line-height:1.9;
+color:var(--muted);
+font-size:0.9rem;
+line-height:1.9;
 }
 
 /* =========================
-   THEME
+THEME
 ========================= */
 
 .theme{
-  position:fixed;
-  top:18px;
-  right:18px;
-  z-index:1000;
-  border:1px solid var(--line);
-  padding:10px 14px;
-  border-radius:12px;
-  cursor:pointer;
-  font-size:11px;
-  letter-spacing:0.15em;
-  background:rgba(255,255,255,0.03);
-  backdrop-filter:blur(12px);
+position:fixed;
+top:18px;
+right:18px;
+z-index:1000;
+border:1px solid var(--line);
+padding:10px 14px;
+border-radius:12px;
+cursor:pointer;
+font-size:11px;
+letter-spacing:0.15em;
+background:rgba(255,255,255,0.03);
+backdrop-filter:blur(12px);
 }
 
 /* =========================
-   RESPONSIVE
+RESPONSIVE
 ========================= */
 
 @media(max-width:768px){
 
-  .hero{
-    padding:0 8%;
-  }
+.hero{
+padding:0 8%;
+}
 
-  .hero h1{
-    font-size:3.4rem;
-    letter-spacing:-2px;
-  }
+.hero h1{
+font-size:3.4rem;
+letter-spacing:-2px;
+}
 
-  .hero p{
-    font-size:0.95rem;
-    line-height:1.8;
-  }
+.hero p{
+font-size:0.95rem;
+line-height:1.8;
+}
 
-  .section{
-    padding:100px 24px;
-  }
+.section{
+padding:100px 24px;
+}
 
-  .section-title{
-    font-size:2.2rem;
-  }
+.section-title{
+font-size:2.2rem;
+}
 
-  .grid{
-    grid-template-columns:1fr;
-  }
+.grid{
+grid-template-columns:1fr;
+}
 
-  .quote{
-    font-size:1.6rem;
-  }
+.quote{
+font-size:1.6rem;
+}
 
 }
 
-</style>
-</head>
-
-<body>
-
-<!-- THEME -->
-
-<div class="theme" onclick="toggleTheme()">
-  THEME
+</style> </head> <body> <!-- THEME --> <div class="theme" onclick="toggleTheme()"> THEME </div> <!-- ========================= HERO ========================= --> <section class="hero"> <div class="hero-inner">
+<div class="eyebrow">
+  FOUNDER • ENGINEER • CREATIVE
 </div>
 
-
-<!-- =========================
-     HERO
-========================= -->
-
-<section class="hero">
-
-  <div class="hero-inner">
-
-    <div class="eyebrow">
-      FOUNDER • ENGINEER • CREATIVE DIRECTOR
-    </div>
-
-    <h1>
-      Onyango Victor
-    </h1>
-
-    <p>
-      Founder of GhViƆɔ — a Kenyan creative and cultural platform
-      exploring where fashion, art, sound, sport and community meet.
-      <br><br>
-      Building culture through intentional creation,
-      collaboration and experiences.
-    </p>
-
-    <div class="actions">
-
-      <a href="#about" class="btn primary">
-        Explore Portfolio
-      </a>
-
-      <a href="mailto:onyango378@gmail.com" class="btn secondary">
-        Collaborate
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section class="section" id="about">
-
-  <h2 class="section-title">
-    About
-  </h2>
-
-  <div class="text">
-
-    <p>
-      I am Onyango Victor, founder of GhViƆɔ — a Kenyan creative and
-      cultural platform exploring the relationship between expression,
-      identity, community and contemporary culture.
-    </p>
-
-    <p>
-      My work sits between different disciplines. Fashion, art,
-      photography, music, football, engineering and community may appear
-      to belong to separate worlds, but I am interested in the spaces
-      where they intersect.
-    </p>
-
-    <p>
-      Professionally trained in Automotive Engineering, I have developed
-      a structural approach to problem-solving shaped by precision,
-      systems, durability and attention to detail.
-    </p>
-
-    <p>
-      Alongside engineering, my interest in art, visual culture,
-      design and creative expression has shaped the way I understand
-      people, objects, spaces and identity.
-    </p>
-
-    <p>
-      GhViƆɔ became the space where these interests could come together —
-      not simply as a brand, but as an evolving platform for ideas,
-      collaborations, experiences and cultural work.
-    </p>
-
-  </div>
-
-  <div class="image">
-    <img src="img/n33.JPG" alt="Onyango Victor">
-  </div>
-
-</section>
-
-
-<!-- =========================
-     GHVIOCO
-========================= -->
-
-<section class="section">
-
-  <h2 class="section-title">
-    GhViƆɔ
-  </h2>
-
-  <div class="text">
-
-    <p>
-      GhViƆɔ is a Kenyan creative and cultural platform exploring where
-      fashion, art, sound, sport and community meet.
-    </p>
-
-    <p>
-      I founded the platform to create a space where different forms
-      of expression could exist together — from apparel and photography
-      to music, football, cultural partnerships and community projects.
-    </p>
-
-    <p>
-      The idea is simple: culture lives in the details of how we dress,
-      what we listen to, the spaces we create, the games we play and
-      the people we gather with.
-    </p>
-
-    <p>
-      Rather than creating for the sake of adding more to the world,
-      GhViƆɔ asks what should exist, why it should exist and who it
-      can create value for.
-    </p>
-
-    <div class="quote">
-      “We don't need to add more noise to the world.
-      We need to create things worth listening to.”
-    </div>
-
-  </div>
-
-  <div class="grid">
-
-    <div class="image">
-      <img src="img/3.jpg" alt="GhViƆɔ creative work">
-    </div>
-
-    <div class="image">
-      <img src="img/55.jpg" alt="GhViƆɔ visual culture">
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     FOUNDER PHILOSOPHY
-========================= -->
-
-<section class="section">
-
-  <h2 class="section-title">
-    How I Think
-  </h2>
-
-  <div class="thought">
-
-    <h3>Intentionality</h3>
-
-    <p>
-      Create with purpose. Choose with care. Question what is
-      unnecessary before adding more to the world.
-    </p>
-
-  </div>
-
-  <div class="thought">
-
-    <h3>Collaboration</h3>
-
-    <p>
-      Different disciplines, perspectives and experiences can become
-      stronger when brought together. I am interested in creating
-      relationships that allow ideas to move beyond individual
-      disciplines.
-    </p>
-
-  </div>
-
-  <div class="thought">
-
-    <h3>Endurance</h3>
-
-    <p>
-      Trends disappear. Meaning can endure. I am interested in ideas,
-      objects, relationships and experiences capable of remaining
-      relevant beyond the moment.
-    </p>
-
-  </div>
-
-  <div class="thought">
-
-    <h3>Community</h3>
-
-    <p>
-      Culture is not created in isolation. The most meaningful work
-      often emerges when people gather, contribute and create something
-      larger than themselves.
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     AREAS OF WORK
-========================= -->
-
-<section class="section">
-
-  <h2 class="section-title">
-    Areas of Work
-  </h2>
-
-  <div class="work-item">
-
-    <div class="work-number">
-      01
-    </div>
-
-    <h3>Fashion</h3>
-
-    <p>
-      Developing GhViƆɔ apparel while exploring identity, proportion,
-      material, craftsmanship and relationships with local designers
-      and ethical fashion.
-    </p>
-
-  </div>
-
-
-  <div class="work-item">
-
-    <div class="work-number">
-      02
-    </div>
-
-    <h3>Art & Photography</h3>
-
-    <p>
-      Working with artists and photographers to document people,
-      places and experiences while developing a visual language for
-      the GhViƆɔ world.
-    </p>
-
-  </div>
-
-
-  <div class="work-item">
-
-    <div class="work-number">
-      03
-    </div>
-
-    <h3>Music & Sound</h3>
-
-    <p>
-      Exploring sound as a cultural material through relationships
-      with DJs, musicians and other creative voices.
-    </p>
-
-  </div>
-
-
-  <div class="work-item">
-
-    <div class="work-number">
-      04
-    </div>
-
-    <h3>Football & Sport</h3>
-
-    <p>
-      Organising and hosting football games that create practical
-      spaces for connection, competition, friendship and community.
-    </p>
-
-  </div>
-
-
-  <div class="work-item">
-
-    <div class="work-number">
-      05
-    </div>
-
-    <h3>Community</h3>
-
-    <p>
-      Developing collaborations and experiences that bring creative
-      work into real-world communities and connect culture with
-      tangible contribution.
-    </p>
-
-  </div>
-
-
-  <div class="work-item">
-
-    <div class="work-number">
-      06
-    </div>
-
-    <h3>Creative Direction</h3>
-
-    <p>
-      Connecting ideas, people, disciplines and experiences into
-      coherent creative projects with a clear sense of purpose and
-      identity.
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     SELECTED WORK
-========================= -->
-
-<section class="section">
-
-  <h2 class="section-title">
-    Selected Work
-  </h2>
-
-  <div class="text">
-
-    <p>
-      The work around GhViƆɔ has taken different forms — from apparel
-      and football gatherings to creative collaborations, photography,
-      music and community initiatives.
-    </p>
-
-    <p>
-      Each project contributes to a growing archive of people, places,
-      ideas and experiences that continue to shape the platform.
-    </p>
-
-  </div>
-
-  <div class="grid">
-
-    <div class="image">
-      <img src="img/4.jpg" alt="Selected GhViƆɔ work">
-    </div>
-
-    <div class="image">
-      <img src="img/44.jpg" alt="Selected GhViƆɔ work">
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     COLLABORATIONS
-========================= -->
-
-<section class="section">
-
-  <h2 class="section-title">
-    Collaboration
-  </h2>
-
-  <div class="text">
-
-    <p>
-      Building GhViƆɔ has meant building relationships across
-      disciplines.
-    </p>
-
-    <p>
-      The platform has collaborated with creatives including
-      DJ Bravoh, Louis Mulema of ICapture Portraits, and Roy of
-      The Clicks of Life — connecting music, photography, visual
-      culture and creative expression.
-    </p>
-
-    <p>
-      A collaboration with the Rotaract Club of Kikuyu also connected
-      creative work with community impact. An original artwork created
-      by Louis Mulema for the club's installation ceremony was
-      auctioned during the event, with proceeds supporting the
-      club's projects.
-    </p>
-
-    <p>
-      These collaborations reflect how I approach creative work:
-      relationships first, ideas in context, and creation with a
-      purpose beyond the immediate output.
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     THINKING
-========================= -->
-
-<section class="section">
-
-  <h2 class="section-title">
-    Selected Thinking
-  </h2>
-
-  <div class="thought">
-
-    <h3>Culture in Motion</h3>
-
-    <p>
-      Culture is not static. It moves through people, places,
-      objects, sound, sport, fashion and everyday interactions.
-      GhViƆɔ exists within that movement.
-    </p>
-
-  </div>
-
-  <div class="thought">
-
-    <h3>Expression & Identity</h3>
-
-    <p>
-      What we wear, listen to, create and participate in can reveal
-      something about how we understand ourselves and the world
-      around us.
-    </p>
-
-  </div>
-
-  <div class="thought">
-
-    <h3>Longevity</h3>
-
-    <p>
-      Sustainability is also a question of what deserves to remain.
-      I am interested in creating with greater awareness of materials,
-      consumption, usefulness and time.
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     DIRECTION
-========================= -->
-
-<section class="section">
-
-  <h2 class="section-title">
-    What I'm Building
-  </h2>
-
-  <div class="text">
-
-    <p>
-      GhViƆɔ is still evolving.
-    </p>
-
-    <p>
-      I am building it as a platform capable of producing apparel,
-      experiences, collaborations, creative projects and community
-      initiatives while developing a body of work rooted in Kenya
-      and connected to the wider East African cultural landscape.
-    </p>
-
-    <p>
-      The ambition is not simply to create a collection of products
-      or campaigns. It is to build an ecosystem where different
-      creative disciplines, people and ideas can meet.
-    </p>
-
-    <p>
-      There is more to create.
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     CONNECT
-========================= -->
-
-<section class="section">
-
-  <h2 class="section-title">
-    Connect
-  </h2>
-
-  <div class="text">
-
-    <p>
-      I am interested in working with designers, engineers, artists,
-      musicians, photographers, athletes, makers, cultural thinkers,
-      organisations and communities.
-    </p>
-
-    <p>
-      If you are building something meaningful, exploring an idea,
-      creating culture or looking for people with whom to build,
-      let's start a conversation.
-    </p>
-
-  </div>
-
-  <div class="actions">
-
-    <a href="mailto:onyango378@gmail.com" class="btn primary">
-      Start Collaboration
-    </a>
-
-  </div>
-
-
-  <!-- SOCIALS -->
-
-  <div class="social-wrap">
-
-    <a
-      class="social"
-      href="https://www.instagram.com/onyhi_ghama/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Instagram"
-    >
-      <img
-        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
-        alt="Instagram"
-      >
-    </a>
-
-    <a
-      class="social"
-      href="https://www.pinterest.com/ghvicc/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Pinterest"
-    >
-      <img
-        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/pinterest.svg"
-        alt="Pinterest"
-      >
-    </a>
-
-    <a
-      class="social"
-      href="https://linktr.ee/ghvicc"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Linktree"
-    >
-      <img
-        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linktree.svg"
-        alt="Linktree"
-      >
-    </a>
-
-    <a
-      class="social"
-      href="mailto:ghvicc254@gmail.com"
-      aria-label="Email GhViƆɔ"
-    >
-      <img
-        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg"
-        alt="Email"
-      >
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-  <p>
-    Nairobi • Kenya • East Africa
-  </p>
-
-  <p style="margin-top:14px;">
-    Onyango Victor
-  </p>
-
-  <p style="margin-top:6px;">
-    Founder of GhViƆɔ
-  </p>
-
-</footer>
-
-
-<script>
-
+<h1>
+  Onyango Victor
+</h1>
+
+<p>
+  Founder of GhViƆɔ — a Kenyan creative and cultural platform
+  exploring where fashion, art, sound, sport and community meet.
+  <br><br>
+  My work moves across engineering, creative direction,
+  fashion, photography, music, football, food and community —
+  connected by a common interest in building meaningful things
+  with people.
+</p>
+
+<div class="actions">
+
+  <a href="#about" class="btn primary">
+    Explore Portfolio
+  </a>
+
+  <a href="mailto:onyango378@gmail.com" class="btn secondary">
+    Collaborate
+  </a>
+
+</div>
+
+</div> </section> <!-- ========================= ABOUT ========================= --> <section class="section" id="about"> <h2 class="section-title"> About </h2> <div class="text">
+<p>
+  I am Onyango Victor, a founder, engineer and creative working
+  across different disciplines and forms of expression.
+</p>
+
+<p>
+  My work does not fit neatly into one category. I am interested
+  in the relationship between systems and creativity, structure
+  and expression, individual identity and collective culture.
+</p>
+
+<p>
+  Professionally trained in Automotive Engineering, I developed
+  a way of thinking shaped by precision, systems, problem-solving,
+  durability and attention to detail.
+</p>
+
+<p>
+  Outside engineering, I have continued to explore fashion,
+  art, photography, music, sport, food and community. These
+  interests have gradually become practical projects, collaborations
+  and ventures rather than remaining separate interests.
+</p>
+
+<p>
+  GhViƆɔ became the platform through which many of these interests
+  could exist together — creating space for cultural projects,
+  creative collaborations, apparel, football, photography,
+  sound and community experiences.
+</p>
+
+<p>
+  I am interested in building things that can exist beyond a
+  single moment: ideas, relationships, objects, experiences
+  and communities that can continue to evolve.
+</p>
+
+</div> <div class="image"> <img src="img/n33.JPG" alt="Onyango Victor"> </div> </section> <!-- ========================= GHViƆɔ ========================= --> <section class="section"> <h2 class="section-title"> GhViƆɔ </h2> <div class="text">
+<p>
+  GhViƆɔ is a Kenyan creative and cultural platform exploring
+  where fashion, art, sound, sport and community meet.
+</p>
+
+<p>
+  I founded GhViƆɔ as a space for different forms of creative
+  expression to exist together — from apparel and photography
+  to music, football, cultural partnerships and community projects.
+</p>
+
+<p>
+  The platform is interested in expression with intention:
+  what we create, why we create it, who we create it with,
+  and what it contributes.
+</p>
+
+<p>
+  GhViƆɔ is already in motion — building relationships,
+  creating experiences and developing a growing body of work
+  rooted in Kenya and connected to the wider East African
+  cultural landscape.
+</p>
+
+<div class="quote">
+  “We don't need to add more noise to the world.
+  We need to create things worth listening to.”
+</div>
+
+</div> <div class="grid">
+<div class="image">
+  <img src="img/3.jpg" alt="GhViƆɔ creative work">
+</div>
+
+<div class="image">
+  <img src="img/55.jpg" alt="GhViƆɔ visual culture">
+</div>
+
+</div> </section> <!-- ========================= FOUNDER PHILOSOPHY ========================= --> <section class="section"> <h2 class="section-title"> How I Think </h2> <div class="thought">
+<h3>Intentionality</h3>
+
+<p>
+  Create with purpose. Choose with care. Question what is
+  unnecessary before adding more to the world.
+</p>
+
+</div> <div class="thought">
+<h3>Collaboration</h3>
+
+<p>
+  Different disciplines, perspectives and experiences can become
+  stronger when brought together. I am interested in creating
+  relationships that allow ideas to move beyond individual
+  disciplines.
+</p>
+
+</div> <div class="thought">
+<h3>Endurance</h3>
+
+<p>
+  Trends disappear. Meaning can endure. I am interested in ideas,
+  objects, relationships and experiences capable of remaining
+  relevant beyond the moment.
+</p>
+
+</div> <div class="thought">
+<h3>Community</h3>
+
+<p>
+  Culture is not created in isolation. The most meaningful work
+  often emerges when people gather, contribute and create
+  something larger than themselves.
+</p>
+
+</div> </section> <!-- ========================= AREAS OF WORK ========================= --> <section class="section"> <h2 class="section-title"> Areas of Work </h2> <div class="work-item">
+<div class="work-number">
+  01
+</div>
+
+<h3>Engineering</h3>
+
+<p>
+  Professionally trained in Automotive Engineering, with experience
+  and interests spanning technical systems, automotive craftsmanship,
+  lidar-related work and data management. Engineering continues to
+  influence how I approach structure, precision and problem-solving.
+</p>
+
+</div> <div class="work-item">
+<div class="work-number">
+  02
+</div>
+
+<h3>Creative Direction</h3>
+
+<p>
+  Connecting people, ideas, disciplines and visual language into
+  coherent creative projects. I work across concept development,
+  identity, collaboration and execution.
+</p>
+
+</div> <div class="work-item">
+<div class="work-number">
+  03
+</div>
+
+<h3>Fashion & Apparel</h3>
+
+<p>
+  Developing GhViƆɔ apparel while exploring identity, proportion,
+  material, craftsmanship and contemporary African expression.
+  The work also creates opportunities to collaborate with local
+  designers and ethical fashion practitioners.
+</p>
+
+</div> <div class="work-item">
+<div class="work-number">
+  04
+</div>
+
+<h3>Art & Photography</h3>
+
+<p>
+  Exploring visual culture through photography, artistic
+  collaborations and documentation of people, places, movement
+  and everyday experiences.
+</p>
+
+</div> <div class="work-item">
+<div class="work-number">
+  05
+</div>
+
+<h3>Music & Sound</h3>
+
+<p>
+  Exploring sound as another form of cultural expression through
+  relationships with DJs, musicians and creative voices. Sound
+  becomes a way of shaping atmosphere, memory and experience.
+</p>
+
+</div> <div class="work-item">
+<div class="work-number">
+  06
+</div>
+
+<h3>Football & Sport</h3>
+
+<p>
+  Organising and hosting football games through GhViƆɔ, using
+  sport as a practical meeting point for competition, friendship,
+  identity and community.
+</p>
+
+</div> <div class="work-item">
+<div class="work-number">
+  07
+</div>
+
+<h3>Food & Hospitality</h3>
+
+<p>
+  Developing creative ventures beyond fashion and culture,
+  including Kenny Fries — Kwa Kenna. The project explores food,
+  community, hospitality and the social energy created around
+  shared experiences.
+</p>
+
+</div> <div class="work-item">
+<div class="work-number">
+  08
+</div>
+
+<h3>Community & Partnerships</h3>
+
+<p>
+  Creating relationships between creative work and real-world
+  communities through collaborations, initiatives and partnerships
+  that allow creative expression to contribute beyond itself.
+</p>
+
+</div> </section> <!-- ========================= SELECTED WORK ========================= --> <section class="section"> <h2 class="section-title"> Selected Work </h2> <div class="text">
+<p>
+  My work has taken different forms — from building a cultural
+  platform and developing apparel to organising football games,
+  working with photographers and DJs, supporting community
+  initiatives and exploring food and hospitality.
+</p>
+
+<p>
+  Rather than treating these as unrelated projects, I see them
+  as different expressions of the same curiosity: understanding
+  people, creating meaningful experiences and bringing ideas
+  into the physical world.
+</p>
+
+</div> <div class="project">
+<div class="project-label">
+  Founder • Culture • Fashion • Community
+</div>
+
+<h3>GhViƆɔ</h3>
+
+<p>
+  A Kenyan creative and cultural platform exploring fashion,
+  art, sound, sport, photography, community and contemporary
+  culture.
+</p>
+
+<a href="#" class="project-link">
+  Explore GhViƆɔ →
+</a>
+
+</div> <div class="project">
+<div class="project-label">
+  Food • Hospitality • Community
+</div>
+
+<h3>Kenny Fries — Kwa Kenna</h3>
+
+<p>
+  A food and hospitality venture built around food, people,
+  music and community. Kenny Fries extends the wider creative
+  approach into a different environment — where food becomes
+  another meeting point.
+</p>
+
+<a href="#" class="project-link">
+  Explore Kenny Fries →
+</a>
+
+</div> <div class="project">
+<div class="project-label">
+  Sport • Community
+</div>
+
+<h3>GhViƆɔ Football</h3>
+
+<p>
+  A growing series of football games organised and hosted through
+  GhViƆɔ, creating physical spaces where people can meet through
+  sport.
+</p>
+
+</div> <div class="project">
+<div class="project-label">
+  Art • Community Impact
+</div>
+
+<h3>Creative Community Partnerships</h3>
+
+<p>
+  Through collaborations such as the work with the Rotaract Club
+  of Kikuyu, creative production has been connected to community
+  initiatives. An original artwork created by Louis Mulema for
+  the club's installation ceremony was auctioned, with proceeds
+  supporting the club's projects.
+</p>
+
+</div> </section> <!-- ========================= COLLABORATIONS ========================= --> <section class="section"> <h2 class="section-title"> Collaborations </h2> <div class="text">
+<p>
+  Much of my work develops through relationships rather than
+  isolated production.
+</p>
+
+<p>
+  Through GhViƆɔ, I have worked with creatives including DJ Bravoh,
+  Louis Mulema of ICapture Portraits and Roy of The Clicks of Life,
+  connecting sound, photography, visual culture and creative
+  expression.
+</p>
+
+<p>
+  I am interested in collaborations where different strengths
+  can meet and produce something neither discipline could create
+  independently.
+</p>
+
+<p>
+  This approach extends beyond creative practitioners to
+  organisations, communities, athletes, designers, entrepreneurs
+  and people building things in different fields.
+</p>
+
+</div> </section> <!-- ========================= SELECTED THINKING ========================= --> <section class="section"> <h2 class="section-title"> Selected Thinking </h2> <div class="thought">
+<h3>Culture in Motion</h3>
+
+<p>
+  Culture is not static. It moves through people, places,
+  objects, sound, sport, fashion, food and everyday interactions.
+  My work exists within that movement.
+</p>
+
+</div> <div class="thought">
+<h3>Expression & Identity</h3>
+
+<p>
+  What we wear, listen to, create, eat and participate in can
+  reveal something about how we understand ourselves and the
+  world around us.
+</p>
+
+</div> <div class="thought">
+<h3>Structure & Creativity</h3>
+
+<p>
+  Engineering and creativity are not opposites. Structure can
+  provide the conditions in which experimentation, expression
+  and innovation become possible.
+</p>
+
+</div> <div class="thought">
+<h3>Longevity</h3>
+
+<p>
+  Sustainability is also a question of what deserves to remain.
+  I am interested in creating with greater awareness of materials,
+  consumption, usefulness and time.
+</p>
+
+</div> <div class="thought">
+<h3>People First</h3>
+
+<p>
+  Projects become meaningful through the people who experience
+  them, contribute to them and carry them forward. Community is
+  therefore not an afterthought but part of the creative process.
+</p>
+
+</div> </section> <!-- ========================= WHAT I'M BUILDING ========================= --> <section class="section"> <h2 class="section-title"> What I'm Building </h2> <div class="text">
+<p>
+  I am building across several worlds rather than trying to
+  remain inside one.
+</p>
+
+<p>
+  GhViƆɔ provides a cultural foundation through which fashion,
+  art, sound, sport, photography and community can intersect.
+  Other ventures and projects allow me to explore different
+  environments, from food and hospitality to technical and
+  entrepreneurial work.
+</p>
+
+<p>
+  The common thread is not a particular product or industry.
+  It is the process of observing, questioning, creating,
+  connecting and building with intention.
+</p>
+
+<p>
+  I am interested in what can happen when creative thinking,
+  technical thinking and community thinking are brought into
+  the same room.
+</p>
+
+<p>
+  There is more to create.
+</p>
+
+</div> </section> <!-- ========================= COLLABORATE ========================= --> <section class="section"> <h2 class="section-title"> Work With Me </h2> <div class="text">
+<p>
+  I am open to working with designers, engineers, artists,
+  musicians, photographers, athletes, makers, entrepreneurs,
+  cultural thinkers, organisations and communities.
+</p>
+
+<p>
+  Whether the opportunity involves building a creative project,
+  developing a cultural idea, creating an experience, exploring
+  a business venture or bringing different disciplines together,
+  I am interested in conversations that can lead somewhere
+  meaningful.
+</p>
+
+<p>
+  If you are building something, let's talk.
+</p>
+
+</div> <div class="actions">
+<a href="mailto:onyango378@gmail.com" class="btn primary">
+  Start Collaboration
+</a>
+
+</div> <!-- SOCIALS --> <div class="social-wrap">
+<a
+  class="social"
+  href="https://www.instagram.com/onyhi_ghama/"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Instagram"
+>
+  <img
+    src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+    alt="Instagram"
+  >
+</a>
+
+<a
+  class="social"
+  href="https://www.pinterest.com/ghvicc/"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Pinterest"
+>
+  <img
+    src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/pinterest.svg"
+    alt="Pinterest"
+  >
+</a>
+
+<a
+  class="social"
+  href="https://linktr.ee/ghvicc"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Linktree"
+>
+  <img
+    src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linktree.svg"
+    alt="Linktree"
+  >
+</a>
+
+<a
+  class="social"
+  href="mailto:ghvicc254@gmail.com"
+  aria-label="Email GhViƆɔ"
+>
+  <img
+    src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg"
+    alt="Email"
+  >
+</a>
+
+</div> </section> <!-- ========================= FOOTER ========================= --> <footer> <p> Nairobi • Kenya • East Africa </p> <p style="margin-top:14px;"> Onyango Victor </p> <p style="margin-top:6px;"> Founder • Engineer • Creative </p> <p style="margin-top:18px;"> Building across culture, creativity, technology and community. </p> </footer> <script>
 function toggleTheme(){
-  document.body.classList.toggle("light");
+document.body.classList.toggle("light");
 }
 
-</script>
-
-</body>
-</html>
+</script> </body> </html>
