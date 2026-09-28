@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta
   name="description"
   content="Onyango Victor — Founder, Engineer and Creative building across culture, technology, entrepreneurship and community."
-/>
+>
 
 <title>Onyango Victor — Founder of GhViƆɔ</title>
 
@@ -15,29 +15,53 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
   rel="stylesheet"
 >
 
 <style>
 
+/* =========================================================
+   COLOR SYSTEM
+========================================================= */
+
 :root{
-  --bg:#070707;
-  --surface:#111111;
-  --text:#f5f5f5;
-  --muted:#9ca3af;
-  --accent:#c7a76c;
-  --line:rgba(255,255,255,0.08);
+
+  /* Main */
+  --bg:#171715;
+  --bg-soft:#20201d;
+  --surface:#242420;
+
+  /* Light */
+  --light:#c9c5b9;
+  --light-soft:#d8d4ca;
+  --bone:#e8e3d8;
+
+  /* Typography */
+  --text:#e8e3d8;
+  --text-soft:#b9b4a9;
+  --muted:#858178;
+
+  /* Accent */
+  --olive:#a5a58a;
+  --olive-dark:#74775e;
+
+  /* Warm secondary accent */
+  --clay:#a9785f;
+
+  /* Lines */
+  --line:rgba(232,227,216,.13);
+  --line-dark:rgba(30,30,27,.14);
+
+  /* Fonts */
+  --serif:'Playfair Display',serif;
+  --sans:'DM Sans',sans-serif;
 }
 
-.light{
-  --bg:#f5f1ea;
-  --surface:#ffffff;
-  --text:#111111;
-  --muted:#5f6368;
-  --accent:#9d7b46;
-  --line:rgba(0,0,0,0.08);
-}
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
   margin:0;
@@ -52,9 +76,13 @@ html{
 body{
   background:var(--bg);
   color:var(--text);
-  font-family:'Inter',sans-serif;
-  transition:0.4s ease;
+  font-family:var(--sans);
   overflow-x:hidden;
+}
+
+img{
+  width:100%;
+  display:block;
 }
 
 a{
@@ -62,413 +90,1597 @@ a{
   text-decoration:none;
 }
 
-img{
-  max-width:100%;
+::selection{
+  background:var(--olive);
+  color:#171715;
 }
 
-/* =========================
-   HERO
-========================= */
 
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:0 8%;
-  position:relative;
+/* =========================================================
+   GLOBAL
+========================================================= */
 
-  background:
-  radial-gradient(
-    circle at top left,
-    rgba(199,167,108,0.12),
-    transparent 35%
-  ),
-  radial-gradient(
-    circle at bottom right,
-    rgba(255,255,255,0.03),
-    transparent 40%
-  );
+.container{
+  width:min(1200px, calc(100% - 48px));
+  margin:auto;
 }
 
-.hero-inner{
-  max-width:1000px;
+.section{
+  padding:150px 0;
 }
 
 .eyebrow{
-  letter-spacing:0.32em;
-  text-transform:uppercase;
-  color:var(--accent);
-  font-size:11px;
-  margin-bottom:25px;
-}
-
-.hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(4rem,9vw,7rem);
-  line-height:0.95;
-  letter-spacing:-4px;
-  font-weight:600;
-}
-
-.hero p{
-  margin:40px auto 0;
-  max-width:780px;
-  color:var(--muted);
-  line-height:2;
-  font-size:1.05rem;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-
-.actions{
-  margin-top:45px;
-  display:flex;
-  justify-content:center;
-  gap:16px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  padding:14px 24px;
-  border-radius:14px;
-  text-decoration:none;
-  font-size:0.9rem;
-  transition:0.3s ease;
-  display:inline-block;
-}
-
-.primary{
-  background:var(--accent);
-  color:#111;
-}
-
-.primary:hover{
-  transform:translateY(-3px);
-}
-
-.secondary{
-  border:1px solid var(--line);
-  color:var(--text);
-}
-
-.secondary:hover{
-  border-color:var(--accent);
-  color:var(--accent);
-  transform:translateY(-3px);
-}
-
-/* =========================
-   SECTIONS
-========================= */
-
-.section{
-  max-width:980px;
-  margin:auto;
-  padding:140px 24px;
-}
-
-.section-title{
-  font-family:'Playfair Display',serif;
-  font-size:3rem;
-  margin-bottom:50px;
-  letter-spacing:-1px;
-  position:relative;
-}
-
-.section-title::before{
-  content:"";
-  width:50px;
-  height:1px;
-  background:var(--accent);
-  display:block;
-  margin-bottom:18px;
-}
-
-.text{
-  max-width:760px;
-  color:var(--muted);
-  line-height:2;
-  font-size:1.04rem;
-}
-
-.text p{
-  margin-bottom:24px;
-}
-
-/* =========================
-   IMAGE
-========================= */
-
-.image{
-  width:100%;
-  margin-top:45px;
-  border-radius:24px;
-  overflow:hidden;
-  border:1px solid var(--line);
-}
-
-.image img{
-  width:100%;
-  display:block;
-  transition:0.6s ease;
-}
-
-.image img:hover{
-  transform:scale(1.03);
-}
-
-/* =========================
-   GRID
-========================= */
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:28px;
-  margin-top:45px;
-}
-
-/* =========================
-   THOUGHTS
-========================= */
-
-.thought{
-  padding:34px;
-  border:1px solid var(--line);
-  border-radius:24px;
-  background:rgba(255,255,255,0.02);
-  margin-bottom:24px;
-  transition:0.3s ease;
-}
-
-.light .thought{
-  background:rgba(0,0,0,0.02);
-}
-
-.thought:hover{
-  border-color:rgba(199,167,108,0.4);
-  transform:translateY(-2px);
-}
-
-.thought h3{
-  margin-bottom:14px;
-  font-size:1.1rem;
-}
-
-.thought p{
-  color:var(--muted);
-  line-height:1.9;
-}
-
-/* =========================
-   QUOTE
-========================= */
-
-.quote{
-  font-family:'Playfair Display',serif;
-  font-size:2rem;
-  line-height:1.5;
-  color:var(--text);
-  margin-top:35px;
-}
-
-/* =========================
-   AREAS OF WORK
-========================= */
-
-.work-item{
-  padding:32px 0;
-  border-top:1px solid var(--line);
-}
-
-.work-item:last-child{
-  border-bottom:1px solid var(--line);
-}
-
-.work-number{
-  color:var(--accent);
-  font-size:11px;
-  letter-spacing:0.2em;
-  margin-bottom:12px;
-}
-
-.work-item h3{
-  font-family:'Playfair Display',serif;
-  font-size:1.7rem;
-  font-weight:500;
-  margin-bottom:12px;
-}
-
-.work-item p{
-  max-width:700px;
-  color:var(--muted);
-  line-height:1.9;
-}
-
-/* =========================
-   PROJECTS
-========================= */
-
-.project{
-  border:1px solid var(--line);
-  border-radius:24px;
-  padding:35px;
-  margin-bottom:24px;
-  background:rgba(255,255,255,0.015);
-  transition:0.3s ease;
-}
-
-.light .project{
-  background:rgba(0,0,0,0.02);
-}
-
-.project:hover{
-  transform:translateY(-3px);
-  border-color:rgba(199,167,108,0.45);
-}
-
-.project-label{
-  color:var(--accent);
   font-size:10px;
-  letter-spacing:0.2em;
+  letter-spacing:.28em;
   text-transform:uppercase;
-  margin-bottom:14px;
+  color:var(--olive);
 }
 
-.project h3{
-  font-family:'Playfair Display',serif;
-  font-size:2rem;
-  margin-bottom:14px;
+.section-heading{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(2.8rem,6vw,5.5rem);
+  line-height:.98;
+  letter-spacing:-.045em;
 }
 
-.project p{
-  color:var(--muted);
+.body-copy{
+  color:var(--text-soft);
+  font-size:1rem;
   line-height:1.9;
-  margin-bottom:24px;
+  max-width:650px;
 }
 
-.project-link{
-  display:inline-block;
-  color:var(--accent);
-  font-size:11px;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  border-bottom:1px solid var(--accent);
-  padding-bottom:4px;
-}
 
-/* =========================
-   SOCIALS
-========================= */
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
-.social-wrap{
+.nav{
+  position:fixed;
+  top:0;
+  left:0;
+
+  width:100%;
+
+  padding:24px 32px;
+
   display:flex;
-  justify-content:center;
-  gap:14px;
-  margin-top:30px;
-  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:center;
+
+  z-index:1000;
+
+  pointer-events:none;
 }
 
-.social{
-  width:42px;
-  height:42px;
-  border-radius:12px;
+.nav > *{
+  pointer-events:auto;
+}
+
+.logo{
+  font-family:var(--serif);
+  font-size:1.1rem;
+  letter-spacing:-.03em;
+}
+
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.nav-link{
+  font-size:10px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--text);
+  opacity:.65;
+  transition:.3s ease;
+}
+
+.nav-link:hover{
+  opacity:1;
+  color:var(--olive);
+}
+
+.mail-icon{
+  width:38px;
+  height:38px;
+
+  border:1px solid var(--line);
+  border-radius:50%;
+
   display:flex;
   align-items:center;
   justify-content:center;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,0.03);
-  transition:0.3s ease;
+
+  background:rgba(23,23,21,.45);
+
+  backdrop-filter:blur(14px);
+
+  transition:.3s ease;
 }
 
-.social:hover{
-  transform:translateY(-3px);
-  border-color:var(--accent);
+.mail-icon svg{
+  width:15px;
+  height:15px;
+}
+
+.mail-icon:hover{
+  border-color:var(--olive);
+  color:var(--olive);
+  transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+  min-height:100vh;
+
+  position:relative;
+
+  display:flex;
+  align-items:flex-end;
+
+  padding:160px 0 90px;
+
+  overflow:hidden;
+
+  background:
+
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(165,165,138,.07),
+      transparent 25%
+    ),
+
+    var(--bg);
+}
+
+.hero-inner{
+  width:min(1200px, calc(100% - 48px));
+  margin:auto;
+
+  position:relative;
+  z-index:2;
+}
+
+.hero-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+
+  margin-bottom:80px;
+}
+
+.hero-location{
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+
+  color:var(--muted);
+}
+
+.hero-title{
+  font-family:var(--serif);
+
+  font-size:clamp(5rem,13vw,12rem);
+
+  line-height:.78;
+
+  letter-spacing:-.075em;
+
+  font-weight:400;
+
+  max-width:1150px;
+}
+
+.hero-title span{
+  display:block;
+}
+
+.hero-title .indent{
+  padding-left:11vw;
+}
+
+.hero-description{
+  margin-top:70px;
+  margin-left:auto;
+
+  max-width:420px;
+
+  font-size:14px;
+  line-height:1.8;
+
+  color:var(--text-soft);
+}
+
+.hero-image{
+  position:absolute;
+
+  width:clamp(180px,22vw,340px);
+  height:clamp(240px,31vw,450px);
+
+  right:8%;
+  top:22%;
+
+  overflow:hidden;
+
+  z-index:1;
+
+  transform:rotate(3deg);
+
+  border:1px solid rgba(232,227,216,.1);
+}
+
+.hero-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+
+  filter:
+    saturate(.68)
+    contrast(.94);
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro{
+  background:var(--bg-soft);
+  color:var(--text);
+}
+
+.intro-grid{
+  display:grid;
+
+  grid-template-columns:1fr 1.3fr;
+
+  gap:100px;
+
+  align-items:start;
+}
+
+.intro .eyebrow{
+  color:var(--olive);
+}
+
+.intro-text{
+  font-family:var(--serif);
+
+  font-size:clamp(2rem,4vw,4rem);
+
+  line-height:1.15;
+
+  letter-spacing:-.035em;
+
+  max-width:850px;
+}
+
+.intro-small{
+  margin-top:50px;
+
+  color:var(--muted);
+
+  line-height:1.8;
+
+  max-width:560px;
+}
+
+
+/* =========================================================
+   VISUAL STATEMENT
+========================================================= */
+
+.visual-statement{
+
+  position:relative;
+
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+
+  overflow:hidden;
+
+  padding:120px 0;
+
+  background:var(--bg);
+}
+
+.visual-image{
+
+  width:62%;
+
+  margin-left:7%;
+
+  position:relative;
+
+  z-index:1;
+
+}
+
+.visual-image img{
+
+  aspect-ratio:4/5;
+
+  object-fit:cover;
+
+  filter:
+    saturate(.62)
+    contrast(.96);
+
+}
+
+.visual-word{
+
+  position:absolute;
+
+  right:4%;
+  bottom:12%;
+
+  z-index:2;
+
+  font-family:var(--serif);
+
+  font-size:clamp(5rem,14vw,13rem);
+
+  line-height:.75;
+
+  letter-spacing:-.085em;
+
+  color:var(--bone);
+
+  mix-blend-mode:screen;
+
+}
+
+.visual-caption{
+
+  position:absolute;
+
+  right:7%;
+  top:18%;
+
+  max-width:230px;
+
+  font-size:10px;
+
+  line-height:1.7;
+
+  letter-spacing:.08em;
+
+  text-transform:uppercase;
+
+  color:var(--muted);
+}
+
+
+/* =========================================================
+   GHVIƆɔ
+========================================================= */
+
+.ghvico{
+  padding-top:180px;
+
+  background:#191917;
+}
+
+.ghvico-header{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:80px;
+
+  align-items:end;
+
+  margin-bottom:100px;
+
+}
+
+.ghvico-title{
+
+  font-family:var(--serif);
+
+  font-size:clamp(5rem,12vw,11rem);
+
+  line-height:.75;
+
+  letter-spacing:-.085em;
+
+  font-weight:400;
+
+  color:var(--bone);
+
+}
+
+.ghvico-description{
+
+  max-width:480px;
+
+  color:var(--text-soft);
+
+  line-height:1.9;
+
+}
+
+.ghvico-link{
+
+  display:inline-flex;
+
+  margin-top:30px;
+
+  font-size:10px;
+
+  letter-spacing:.18em;
+
+  text-transform:uppercase;
+
+  padding-bottom:7px;
+
+  border-bottom:1px solid var(--olive);
+
+  color:var(--olive);
+
+  transition:.3s ease;
+
+}
+
+.ghvico-link:hover{
+  color:var(--bone);
+  border-color:var(--bone);
+}
+
+.ghvico-gallery{
+
+  display:grid;
+
+  grid-template-columns:1.25fr .75fr;
+
+  gap:24px;
+
+  align-items:end;
+
+}
+
+.gallery-large{
+  aspect-ratio:4/5;
+}
+
+.gallery-small{
+  aspect-ratio:4/5;
+  margin-bottom:12%;
+}
+
+.ghvico-gallery .image-wrap{
+  overflow:hidden;
+}
+
+.ghvico-gallery img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  filter:
+    saturate(.65)
+    contrast(.96);
+
+  transition:
+    transform .9s cubic-bezier(.2,.7,.2,1),
+    filter .5s ease;
+
+}
+
+.ghvico-gallery .image-wrap:hover img{
+
+  transform:scale(1.035);
+
+  filter:
+    saturate(.82)
+    contrast(1);
+
+}
+
+
+/* =========================================================
+   MANIFESTO
+========================================================= */
+
+.manifesto{
+
+  padding:200px 0;
+
+  background:var(--bg);
+
+}
+
+.manifesto-inner{
+
+  display:grid;
+
+  grid-template-columns:180px 1fr;
+
+  gap:60px;
+
+}
+
+.manifesto-text{
+
+  font-family:var(--serif);
+
+  font-size:clamp(2.4rem,5vw,5rem);
+
+  line-height:1.12;
+
+  letter-spacing:-.04em;
+
+  max-width:950px;
+
+}
+
+.manifesto-text em{
+
+  color:var(--olive);
+
+  font-style:normal;
+
+}
+
+
+/* =========================================================
+   COLLAGE
+========================================================= */
+
+.collage{
+
+  position:relative;
+
+  min-height:900px;
+
+  padding:100px 0;
+
+  background:#20201d;
+
+  overflow:hidden;
+
+}
+
+.collage-title{
+
+  position:absolute;
+
+  top:50%;
+  left:50%;
+
+  transform:translate(-50%,-50%);
+
+  z-index:5;
+
+  font-family:var(--serif);
+
+  font-size:clamp(4rem,10vw,10rem);
+
+  letter-spacing:-.085em;
+
+  white-space:nowrap;
+
+  color:var(--bone);
+
+  mix-blend-mode:screen;
+
+}
+
+.collage-image{
+
+  position:absolute;
+
+  overflow:hidden;
+
+  border:1px solid rgba(232,227,216,.12);
+
+}
+
+.collage-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  filter:
+    saturate(.58)
+    contrast(.95);
+
+  transition:
+    transform .8s ease,
+    filter .6s ease;
+
+}
+
+.collage-image:hover img{
+
+  transform:scale(1.04);
+
+  filter:
+    saturate(.78)
+    contrast(1);
+
+}
+
+.collage-1{
+
+  width:28%;
+  height:400px;
+
+  top:5%;
+  left:8%;
+
+  transform:rotate(-4deg);
+
+}
+
+.collage-2{
+
+  width:24%;
+  height:330px;
+
+  top:18%;
+  right:9%;
+
+  transform:rotate(4deg);
+
+}
+
+.collage-3{
+
+  width:30%;
+  height:430px;
+
+  bottom:4%;
+  left:23%;
+
+  transform:rotate(2deg);
+
+}
+
+.collage-4{
+
+  width:22%;
+  height:300px;
+
+  bottom:12%;
+  right:13%;
+
+  transform:rotate(-3deg);
+
+}
+
+
+/* =========================================================
+   AREAS OF WORK
+========================================================= */
+
+.areas{
+
+  background:var(--light);
+
+  color:#20201d;
+
+}
+
+.areas .eyebrow{
+  color:var(--olive-dark);
+}
+
+.areas-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:flex-end;
+
+  margin-bottom:90px;
+
+}
+
+.areas-header p{
+
+  max-width:340px;
+
+  color:#625f57;
+
+  line-height:1.8;
+
+}
+
+.area{
+
+  display:grid;
+
+  grid-template-columns:100px 1fr 1fr;
+
+  gap:40px;
+
+  padding:38px 0;
+
+  border-top:1px solid var(--line-dark);
+
+  align-items:start;
+
+}
+
+.area:last-child{
+  border-bottom:1px solid var(--line-dark);
+}
+
+.area-number{
+
+  color:var(--olive-dark);
+
+  font-size:10px;
+
+  letter-spacing:.2em;
+
+}
+
+.area h3{
+
+  font-family:var(--serif);
+
+  font-size:2rem;
+
+  font-weight:400;
+
+}
+
+.area p{
+
+  color:#625f57;
+
+  line-height:1.8;
+
+  max-width:470px;
+
+}
+
+
+/* =========================================================
+   PORTRAIT / ABOUT
+========================================================= */
+
+.portrait-section{
+
+  padding:180px 0;
+
+  background:var(--bg);
+
+}
+
+.portrait-grid{
+
+  display:grid;
+
+  grid-template-columns:.8fr 1.2fr;
+
+  gap:100px;
+
+  align-items:center;
+
+}
+
+.portrait{
+
+  aspect-ratio:4/5;
+
+  overflow:hidden;
+
+}
+
+.portrait img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  filter:
+    saturate(.58)
+    contrast(.98);
+
+}
+
+.portrait-copy h2{
+
+  font-family:var(--serif);
+
+  font-size:clamp(3rem,6vw,6rem);
+
+  font-weight:400;
+
+  line-height:.95;
+
+  letter-spacing:-.055em;
+
+  margin-bottom:45px;
+
+}
+
+.portrait-copy p{
+
+  max-width:600px;
+
+  color:var(--text-soft);
+
+  line-height:1.9;
+
+  margin-bottom:22px;
+
+}
+
+
+/* =========================================================
+   SELECTED WORK
+========================================================= */
+
+.work{
+
+  padding-bottom:180px;
+
+  background:var(--bg);
+
+}
+
+.work-heading{
+  margin-bottom:80px;
+}
+
+.work-item{
+
+  position:relative;
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:80px;
+
+  align-items:center;
+
+  padding:80px 0;
+
+  border-top:1px solid var(--line);
+
+}
+
+.work-item.reverse{
+
+  direction:rtl;
+
+}
+
+.work-item.reverse > *{
+  direction:ltr;
+}
+
+.work-image{
+  overflow:hidden;
+}
+
+.work-image img{
+
+  aspect-ratio:4/3;
+
+  object-fit:cover;
+
+  filter:
+    saturate(.62)
+    contrast(.96);
+
+  transition:
+    transform .8s ease,
+    filter .5s ease;
+
+}
+
+.work-image:hover img{
+
+  transform:scale(1.03);
+
+  filter:
+    saturate(.8)
+    contrast(1);
+
+}
+
+.work-info .eyebrow{
+  margin-bottom:20px;
+}
+
+.work-info h3{
+
+  font-family:var(--serif);
+
+  font-size:clamp(2.4rem,5vw,5rem);
+
+  font-weight:400;
+
+  line-height:.95;
+
+  letter-spacing:-.055em;
+
+  margin-bottom:28px;
+
+}
+
+.work-info p{
+
+  max-width:480px;
+
+  color:var(--muted);
+
+  line-height:1.9;
+
+}
+
+.work-info a{
+
+  display:inline-block;
+
+  margin-top:30px;
+
+  font-size:10px;
+
+  letter-spacing:.18em;
+
+  text-transform:uppercase;
+
+  color:var(--olive);
+
+  border-bottom:1px solid var(--olive);
+
+  padding-bottom:6px;
+
+  transition:.3s ease;
+
+}
+
+.work-info a:hover{
+
+  color:var(--bone);
+
+  border-color:var(--bone);
+
+}
+
+
+/* =========================================================
+   FINAL VISUAL
+========================================================= */
+
+.final-visual{
+
+  position:relative;
+
+  height:90vh;
+
+  overflow:hidden;
+
+  background:#171715;
+
+}
+
+.final-visual img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  filter:
+    saturate(.5)
+    brightness(.7);
+
+  transition:
+    transform 1.2s ease;
+
+}
+
+.final-visual:hover img{
+  transform:scale(1.02);
+}
+
+.final-overlay{
+
+  position:absolute;
+
+  inset:0;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(23,23,21,.08),
+      rgba(23,23,21,.35)
+    );
+
+}
+
+.final-overlay h2{
+
+  color:var(--bone);
+
+  font-family:var(--serif);
+
+  font-weight:400;
+
+  font-size:clamp(4rem,11vw,11rem);
+
+  letter-spacing:-.085em;
+
+}
+
+
+/* =========================================================
+   CONNECT
+========================================================= */
+
+.connect{
+
+  padding:180px 0;
+
+  background:var(--light);
+
+  color:#20201d;
+
+}
+
+.connect .eyebrow{
+  color:var(--olive-dark);
+}
+
+.connect-inner{
+  text-align:center;
+}
+
+.connect h2{
+
+  font-family:var(--serif);
+
+  font-weight:400;
+
+  font-size:clamp(4rem,10vw,10rem);
+
+  letter-spacing:-.08em;
+
+  line-height:.8;
+
+}
+
+.connect p{
+
+  max-width:520px;
+
+  margin:50px auto 0;
+
+  color:#625f57;
+
+  line-height:1.9;
+
+}
+
+.connect-actions{
+
+  margin-top:50px;
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:16px;
+
+}
+
+.connect-button{
+
+  padding:15px 24px;
+
+  border:1px solid rgba(32,32,29,.2);
+
+  border-radius:100px;
+
+  font-size:10px;
+
+  letter-spacing:.16em;
+
+  text-transform:uppercase;
+
+  transition:.3s ease;
+
+}
+
+.connect-button:hover{
+
+  background:#20201d;
+
+  color:var(--light);
+
+  border-color:#20201d;
+
+}
+
+
+/* =========================================================
+   SOCIALS
+========================================================= */
+
+.socials{
+
+  margin-top:80px;
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:12px;
+
+}
+
+.social{
+
+  width:44px;
+  height:44px;
+
+  border:1px solid rgba(32,32,29,.2);
+
+  border-radius:50%;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  transition:.3s ease;
+
 }
 
 .social img{
-  width:18px;
-  height:18px;
-  opacity:0.9;
+
+  width:16px;
+  height:16px;
+
+  opacity:.6;
+
 }
 
-/* =========================
+.social:hover{
+
+  border-color:var(--olive-dark);
+
+  transform:translateY(-3px);
+
+}
+
+.social:hover img{
+  opacity:1;
+}
+
+
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer{
-  padding:100px 24px;
-  text-align:center;
-  border-top:1px solid var(--line);
-}
 
-footer p{
+  padding:35px 0;
+
+  background:#171715;
+
   color:var(--muted);
-  font-size:0.9rem;
-  line-height:1.9;
+
+  font-size:10px;
+
+  letter-spacing:.1em;
+
+  text-transform:uppercase;
+
 }
 
-/* =========================
-   THEME
-========================= */
+.footer-inner{
 
-.theme{
-  position:fixed;
-  top:18px;
-  right:18px;
-  z-index:1000;
-  border:1px solid var(--line);
-  padding:10px 14px;
-  border-radius:12px;
-  cursor:pointer;
-  font-size:11px;
-  letter-spacing:0.15em;
-  background:rgba(255,255,255,0.03);
-  backdrop-filter:blur(12px);
+  width:min(1200px, calc(100% - 48px));
+
+  margin:auto;
+
+  display:flex;
+
+  justify-content:space-between;
+
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 
-@media(max-width:768px){
+/* =========================================================
+   REVEAL ANIMATIONS
+========================================================= */
 
-  .hero{
-    padding:0 8%;
-  }
+.reveal{
 
-  .hero h1{
-    font-size:3.4rem;
-    letter-spacing:-2px;
-  }
+  opacity:0;
 
-  .hero p{
-    font-size:0.95rem;
-    line-height:1.8;
+  transform:translateY(35px);
+
+  transition:
+
+    opacity 1s cubic-bezier(.2,.7,.2,1),
+
+    transform 1s cubic-bezier(.2,.7,.2,1);
+
+}
+
+.reveal.visible{
+
+  opacity:1;
+
+  transform:translateY(0);
+
+}
+
+.image-reveal{
+
+  clip-path:inset(12% 0 12% 0);
+
+  transition:
+    clip-path 1.3s cubic-bezier(.2,.7,.2,1);
+
+}
+
+.image-reveal.visible{
+
+  clip-path:inset(0 0 0 0);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:800px){
+
+  .container{
+    width:min(100% - 32px,1200px);
   }
 
   .section{
-    padding:100px 24px;
+    padding:100px 0;
   }
 
-  .section-title{
-    font-size:2.2rem;
+  .nav{
+    padding:18px;
   }
 
-  .grid{
+  .nav-link{
+    display:none;
+  }
+
+  .hero{
+
+    padding:140px 0 70px;
+
+    min-height:100svh;
+
+  }
+
+  .hero-top{
+
+    margin-bottom:60px;
+
+  }
+
+  .hero-title{
+
+    font-size:clamp(4rem,19vw,7rem);
+
+  }
+
+  .hero-title .indent{
+
+    padding-left:0;
+
+  }
+
+  .hero-description{
+
+    margin-top:50px;
+
+    max-width:310px;
+
+  }
+
+  .hero-image{
+
+    width:130px;
+
+    height:180px;
+
+    right:3%;
+
+    top:25%;
+
+    opacity:.8;
+
+  }
+
+
+  /* INTRO */
+
+  .intro-grid{
+
     grid-template-columns:1fr;
+
+    gap:50px;
+
   }
 
-  .quote{
-    font-size:1.6rem;
+  .intro-text{
+
+    font-size:2.3rem;
+
   }
 
-  .project{
-    padding:26px;
+
+  /* VISUAL */
+
+  .visual-statement{
+
+    min-height:760px;
+
+  }
+
+  .visual-image{
+
+    width:78%;
+
+    margin-left:0;
+
+  }
+
+  .visual-word{
+
+    right:-4%;
+
+    bottom:12%;
+
+    font-size:5rem;
+
+  }
+
+  .visual-caption{
+
+    right:3%;
+
+    top:8%;
+
+    max-width:150px;
+
+  }
+
+
+  /* GHVIƆɔ */
+
+  .ghvico-header{
+
+    grid-template-columns:1fr;
+
+    gap:50px;
+
+  }
+
+  .ghvico-title{
+
+    font-size:6rem;
+
+  }
+
+  .ghvico-gallery{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .gallery-small{
+
+    margin:0;
+
+  }
+
+
+  /* MANIFESTO */
+
+  .manifesto{
+
+    padding:120px 0;
+
+  }
+
+  .manifesto-inner{
+
+    grid-template-columns:1fr;
+
+    gap:35px;
+
+  }
+
+  .manifesto-text{
+
+    font-size:2.5rem;
+
+  }
+
+
+  /* COLLAGE */
+
+  .collage{
+
+    min-height:650px;
+
+  }
+
+  .collage-title{
+
+    font-size:4rem;
+
+  }
+
+  .collage-1{
+
+    width:42%;
+
+    height:230px;
+
+    left:3%;
+
+  }
+
+  .collage-2{
+
+    width:38%;
+
+    height:200px;
+
+    right:3%;
+
+  }
+
+  .collage-3{
+
+    width:44%;
+
+    height:260px;
+
+    left:10%;
+
+  }
+
+  .collage-4{
+
+    width:36%;
+
+    height:190px;
+
+    right:6%;
+
+  }
+
+
+  /* AREAS */
+
+  .areas-header{
+
+    display:block;
+
+  }
+
+  .areas-header p{
+
+    margin-top:30px;
+
+  }
+
+  .area{
+
+    grid-template-columns:45px 1fr;
+
+    gap:15px;
+
+  }
+
+  .area p{
+
+    grid-column:2;
+
+  }
+
+
+  /* ABOUT */
+
+  .portrait-grid{
+
+    grid-template-columns:1fr;
+
+    gap:60px;
+
+  }
+
+
+  /* WORK */
+
+  .work-item,
+  .work-item.reverse{
+
+    grid-template-columns:1fr;
+
+    direction:ltr;
+
+    gap:40px;
+
+    padding:60px 0;
+
+  }
+
+
+  /* FINAL */
+
+  .final-visual{
+
+    height:65vh;
+
+  }
+
+
+  /* CONNECT */
+
+  .connect{
+
+    padding:120px 0;
+
+  }
+
+  .connect-actions{
+
+    flex-direction:column;
+
+    align-items:center;
+
+  }
+
+
+  /* FOOTER */
+
+  .footer-inner{
+
+    flex-direction:column;
+
+    gap:12px;
+
+    text-align:center;
+
   }
 
 }
@@ -476,143 +1688,266 @@ footer p{
 </style>
 </head>
 
+
 <body>
 
-<!-- THEME -->
 
-<div
-  class="theme"
-  onclick="toggleTheme()"
-  role="button"
-  aria-label="Toggle website theme"
->
-  THEME
-</div>
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
+<nav class="nav">
 
-<!-- =========================
-     HERO
-========================= -->
+  <a href="#" class="logo">
+    GhViƆɔ
+  </a>
 
-<section class="hero">
+  <div class="nav-right">
 
-  <div class="hero-inner">
+    <a href="#work" class="nav-link">
+      Work
+    </a>
 
-    <div class="eyebrow">
-      FOUNDER • ENGINEER • CREATIVE
-    </div>
+    <a href="#about" class="nav-link">
+      About
+    </a>
 
-    <h1>
-      Onyango Victor
-    </h1>
+    <!-- Gmail icon — email address intentionally hidden -->
 
-    <p>
-     Founder, engineer and creative connecting culture, technology, entrepreneurship and community through GhViƆɔ.
-    </p>
+    <a
+      href="https://mail.google.com/mail/?view=cm&fs=1&to=onyango378@gmail.com"
+      class="mail-icon"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Email Onyango Victor"
+      title="Email"
+    >
 
-    <div class="actions">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+      >
 
-      <a href="#about" class="btn primary">
-        Explore
-      </a>
+        <rect
+          x="3"
+          y="5"
+          width="18"
+          height="14"
+          rx="2"
+        />
 
-<a
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=onyango378@gmail.com"
-  class="btn secondary"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Collaborate
-</a>
+        <path d="M4 7l8 6 8-6"/>
 
-    </div>
+      </svg>
+
+    </a>
 
   </div>
 
-</section>
+</nav>
 
 
-<!-- =========================
-     ABOUT
-========================= -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-<section class="section" id="about">
+<header class="hero">
 
-  <h2 class="section-title">
-    About
-  </h2>
+  <div class="hero-inner">
 
-  <div class="text">
+    <div class="hero-top reveal">
 
-  <p> Onyango Victor is a founder, engineer and creative working across disciplines and forms of expression. </p> <p> My work explores the relationship between systems and creativity, structure and expression, individual identity and collective culture. </p> <p> Professionally trained in Automotive Engineering, I developed a way of thinking shaped by precision, problem-solving, systems and durability. </p> <p> Beyond engineering, I explore fashion, art, photography, music, sport, food and community through projects, collaborations and ventures. </p> <p> GhViƆɔ became a platform where these interests intersect — from apparel and photography to sound, football, cultural projects and community. </p> <p> I am interested in building ideas, relationships, objects and experiences that evolve beyond a single moment. </p>
+      <div class="eyebrow">
+        Founder · Engineer · Creative
+      </div>
 
-</div>
-  <div class="image">
+      <div class="hero-location">
+        Nairobi · Kenya
+      </div>
+
+    </div>
+
+
+    <h1 class="hero-title reveal">
+
+      <span>
+        Onyango
+      </span>
+
+      <span class="indent">
+        Victor
+      </span>
+
+    </h1>
+
+
+    <p class="hero-description reveal">
+
+      Building across culture, technology, entrepreneurship
+      and community — through ideas, people and things worth
+      making.
+
+    </p>
+
+  </div>
+
+
+  <div class="hero-image image-reveal">
+
     <img
       src="img/n33.JPG"
       alt="Onyango Victor"
     >
+
+  </div>
+
+</header>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="section intro">
+
+  <div class="container intro-grid">
+
+    <div class="eyebrow reveal">
+      A way of working
+    </div>
+
+    <div>
+
+      <div class="intro-text reveal">
+
+        I move between worlds —
+        engineering and creativity,
+        culture and business,
+        ideas and things.
+
+      </div>
+
+      <p class="intro-small reveal">
+
+        The work is less about staying inside one discipline
+        and more about finding connections between them.
+
+      </p>
+
+    </div>
+
   </div>
 
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
+     VISUAL STATEMENT
+===================================================== -->
+
+<section class="visual-statement">
+
+  <div class="visual-image image-reveal">
+
+    <img
+      src="img/3.jpg"
+      alt="GhViƆɔ visual culture"
+    >
+
+  </div>
+
+
+  <div class="visual-word reveal">
+    CULTURE
+  </div>
+
+
+  <div class="visual-caption reveal">
+
+    Culture moves through people,
+    places, objects, sound, sport,
+    fashion and everyday life.
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
      GHVIOCO
-========================= -->
+===================================================== -->
 
-<section class="section">
+<section class="section ghvico" id="ghvico">
 
-  <h2 class="section-title">
-    GhViƆɔ
-  </h2>
+  <div class="container">
 
-  <div class="text">
+    <div class="ghvico-header">
 
-  <p>
-    GhViƆɔ is a Kenyan creative and cultural platform exploring
-    where fashion, art, sound, sport and community meet.
-  </p>
+      <div>
 
-  <p>
-    I founded GhViƆɔ as a space where different forms of creative
-    expression could exist together — from apparel and photography
-    to music, football, cultural partnerships and community projects.
-  </p>
+        <div class="eyebrow reveal">
+          Creative & Cultural Platform
+        </div>
 
-  <p>
-    At its core, GhViƆɔ is about creating with intention:
-    what we make, why we make it, who we make it with,
-    and what it contributes.
-  </p>
+        <h2 class="ghvico-title reveal">
+          GhViƆɔ
+        </h2>
 
-  <p>
-    Rooted in Kenya and connected to the wider East African
-    cultural landscape, the platform continues to grow through
-    projects, relationships and experiences.
-  </p>
+      </div>
 
-  <div class="quote">
-    “We don't need to add more noise to the world.
-    We need to create things worth listening to.”
-  </div>
 
-</div>
+      <div class="reveal">
 
-  <div class="grid">
+        <p class="ghvico-description">
 
-    <div class="image">
-      <img
-        src="img/3.jpg"
-        alt="GhViƆɔ creative work"
-      >
+          A Kenyan creative and cultural platform exploring
+          fashion, art, sound, sport, photography and community.
+
+          <br><br>
+
+          A space where different forms of expression meet
+          without needing to become the same thing.
+
+        </p>
+
+
+        <a
+          href="https://ghvicc.github.io/GhViCc-/"
+          class="ghvico-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit GhViƆɔ →
+        </a>
+
+      </div>
+
     </div>
 
-    <div class="image">
-      <img
-        src="img/55.jpg"
-        alt="GhViƆɔ visual culture"
-      >
+
+    <div class="ghvico-gallery">
+
+      <div class="image-wrap gallery-large image-reveal">
+
+        <img
+          src="img/55.jpg"
+          alt="GhViƆɔ creative work"
+        >
+
+      </div>
+
+
+      <div class="image-wrap gallery-small image-reveal">
+
+        <img
+          src="img/4.jpg"
+          alt="GhViƆɔ visual culture"
+        >
+
+      </div>
+
     </div>
 
   </div>
@@ -620,391 +1955,495 @@ footer p{
 </section>
 
 
-<!-- =========================
-     BUILDING ACROSS WORLDS
-========================= -->
+<!-- =====================================================
+     MANIFESTO
+===================================================== -->
 
-<section class="section">
+<section class="manifesto">
 
-  <h2 class="section-title"> Beyond One World </h2> <div class="text"> <p> I am building across several worlds rather than staying inside one. </p> <p> GhViƆɔ provides a cultural foundation where fashion, art, sound, sport, photography and community intersect, while other ventures explore food, hospitality, technical and entrepreneurial work. </p> <p> The common thread is not a particular industry, but the process of observing, questioning, creating, connecting and building with intention. </p> <p> I am interested in what happens when creative, technical and community thinking come together. </p> <p> There is more to create. </p>
-</div>
+  <div class="container manifesto-inner">
+
+    <div class="eyebrow reveal">
+      Perspective
+    </div>
+
+    <div class="manifesto-text reveal">
+
+      I am interested in creating things with
+      <em>intention</em> —
+
+      things that carry an identity,
+      create connection,
+      and remain meaningful
+      after the moment has passed.
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- =========================
-     SELECTED VENTURES
-========================= -->
+<!-- =====================================================
+     IMAGE COLLAGE
+===================================================== -->
 
-<section class="section">
+<section class="collage">
 
-  <h2 class="section-title">
-    Selected Ventures
-  </h2>
+  <div class="collage-image collage-1 image-reveal">
 
-  <div class="text">
-
-    <p>
-      My work has taken different forms. Some projects exist within
-      the GhViƆɔ ecosystem, while others explore entirely different
-      industries and environments.
-    </p>
-
-  </div>
-
-
-  <!-- GHVIOCO -->
-
-  <div class="project">
-
-    <div class="project-label">
-      01 / Creative & Cultural Platform
-    </div>
-
-    <h3>
-      GhViƆɔ
-    </h3>
-
-    <p>
-      A Kenyan creative and cultural platform exploring fashion,
-      art, sound, sport, photography, community and contemporary
-      cultural expression.
-    </p>
-
-    <a
-      class="project-link"
-      href="https://ghvicc.github.io/GhViCc-/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Visit GhViƆɔ website"
+    <img
+      src="img/44.jpg"
+      alt="Selected work"
     >
-      Visit GhViƆɔ →
-    </a>
 
   </div>
 
 
-  <!-- KENNY FRIES -->
+  <div class="collage-image collage-2 image-reveal">
 
-  <div class="project">
-
-    <div class="project-label">
-      02 / Food & Hospitality
-    </div>
-
-    <h3>
-      kenny Fries
-    </h3>
-
-    <p>
-      A food venture built around comfort, street-side energy,
-      community and the experience of bringing people together
-      through food. The project reflects another side of my work:
-      taking an idea from concept and identity into a tangible
-      customer-facing experience.
-    </p>
-
-    <a
-      class="project-link"
-      href="https://kenny-fries.vercel.app/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Visit kenny Fries website"
+    <img
+      src="img/4.jpg"
+      alt="Selected work"
     >
-      Visit kenny Fries →
-    </a>
 
   </div>
 
-</section>
 
-<!-- =========================
-     HOW I THINK
-========================= -->
+  <div class="collage-image collage-3 image-reveal">
 
-<section class="section">
+    <img
+      src="img/55.jpg"
+      alt="Selected work"
+    >
 
-  <h2 class="section-title">
-    How I Think
+  </div>
+
+
+  <div class="collage-image collage-4 image-reveal">
+
+    <img
+      src="img/3.jpg"
+      alt="Selected work"
+    >
+
+  </div>
+
+
+  <h2 class="collage-title reveal">
+    BETWEEN WORLDS
   </h2>
 
-
-  <div class="thought">
-
-    <h3>
-      Culture in Motion
-    </h3>
-
-    <p>
-      Culture is not static. It moves through people, places,
-      objects, sound, sport, fashion, food and everyday
-      interactions. My work exists within that movement.
-    </p>
-
-  </div>
-
-
-  <div class="thought">
-
-    <h3>
-      Expression & Identity
-    </h3>
-
-    <p>
-      What we wear, listen to, create, eat and participate in can
-      reveal something about how we understand ourselves and the
-      world around us.
-    </p>
-
-  </div>
-
-
-  <div class="thought">
-
-    <h3>
-      Structure & Creativity
-    </h3>
-
-    <p>
-      Engineering and creativity are not opposites. Structure can
-      provide the conditions in which experimentation, expression
-      and innovation become possible.
-    </p>
-
-  </div>
-
-
-  <div class="thought">
-
-    <h3>
-      Longevity
-    </h3>
-
-    <p>
-      Sustainability is also a question of what deserves to remain.
-      I am interested in creating with greater awareness of
-      materials, consumption, usefulness and time.
-    </p>
-
-  </div>
-
-
-  <div class="thought">
-
-    <h3>
-      People First
-    </h3>
-
-    <p>
-      Projects become meaningful through the people who experience
-      them, contribute to them and carry them forward. Community is
-      therefore not an afterthought but part of the creative
-      process.
-    </p>
-
-  </div>
-
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      AREAS OF WORK
-========================= -->
+===================================================== -->
 
-<section class="section">
+<section class="section areas" id="work">
 
-  <h2 class="section-title">
-    Areas of Work
-  </h2>
+  <div class="container">
+
+    <div class="areas-header">
+
+      <div>
+
+        <div class="eyebrow reveal">
+          What I work across
+        </div>
+
+        <h2 class="section-heading reveal">
+
+          Different fields.<br>
+          One perspective.
+
+        </h2>
+
+      </div>
 
 
-  <div class="work-item">
+      <p class="reveal">
 
-    <div class="work-number">
-      01
+        The disciplines change.
+        The curiosity doesn't.
+
+      </p>
+
     </div>
 
-    <h3>
-      Fashion
-    </h3>
 
-    <p>
-      Developing GhViƆɔ apparel while exploring identity,
-      proportion, material, craftsmanship and relationships with
-      designers and makers.
-    </p>
+    <div class="area reveal">
 
-  </div>
+      <div class="area-number">
+        01
+      </div>
 
+      <h3>
+        Fashion
+      </h3>
 
-  <div class="work-item">
+      <p>
+        Apparel, identity, material,
+        proportion and relationships
+        with makers and designers.
+      </p>
 
-    <div class="work-number">
-      02
     </div>
 
-    <h3>
-      Art & Photography
-    </h3>
 
-    <p>
-      Working with artists and photographers to document people,
-      places and experiences while developing a visual language
-      around creative projects.
-    </p>
+    <div class="area reveal">
 
-  </div>
+      <div class="area-number">
+        02
+      </div>
 
+      <h3>
+        Art & Photography
+      </h3>
 
-  <div class="work-item">
+      <p>
+        Working with images, artists
+        and photographers to document
+        people, places and moments.
+      </p>
 
-    <div class="work-number">
-      03
     </div>
 
-    <h3>
-      Music & Sound
-    </h3>
 
-    <p>
-      Exploring sound as a cultural material through relationships
-      with DJs, musicians and other creative voices.
-    </p>
+    <div class="area reveal">
 
-  </div>
+      <div class="area-number">
+        03
+      </div>
 
+      <h3>
+        Music & Sound
+      </h3>
 
-  <div class="work-item">
+      <p>
+        Exploring sound as a cultural
+        material through DJs, musicians
+        and creative collaborations.
+      </p>
 
-    <div class="work-number">
-      04
     </div>
 
-    <h3>
-      Football & Sport
-    </h3>
 
-    <p>
-      Organising and hosting football games that create spaces
-      for connection, competition, friendship and community.
-    </p>
+    <div class="area reveal">
 
-  </div>
+      <div class="area-number">
+        04
+      </div>
 
+      <h3>
+        Football & Sport
+      </h3>
 
-  <div class="work-item">
+      <p>
+        Creating spaces for competition,
+        friendship, movement and
+        community.
+      </p>
 
-    <div class="work-number">
-      05
     </div>
 
-    <h3>
-      Food & Hospitality
-    </h3>
 
-    <p>
-      Exploring food, hospitality, customer experience and brand
-      identity through ventures such as kenny Fries.
-    </p>
+    <div class="area reveal">
 
-  </div>
+      <div class="area-number">
+        05
+      </div>
 
+      <h3>
+        Food & Hospitality
+      </h3>
 
-  <div class="work-item">
+      <p>
+        Exploring customer experience,
+        food, identity and hospitality
+        through ventures such as kenny Fries.
+      </p>
 
-    <div class="work-number">
-      06
     </div>
 
-    <h3>
-      Engineering & Technical Work
-    </h3>
 
-    <p>
-      Bringing an engineering perspective shaped by systems,
-      precision, problem-solving, technical thinking and
-      attention to detail.
-    </p>
+    <div class="area reveal">
 
-  </div>
+      <div class="area-number">
+        06
+      </div>
 
+      <h3>
+        Engineering
+      </h3>
 
-  <div class="work-item">
+      <p>
+        Systems, precision, technical
+        thinking, problem-solving and
+        building things that work.
+      </p>
 
-    <div class="work-number">
-      07
     </div>
 
-    <h3>
-      Creative Direction
-    </h3>
 
-    <p>
-      Connecting ideas, people, disciplines and experiences into
-      coherent projects with a clear sense of purpose and identity.
-    </p>
+    <div class="area reveal">
 
-  </div>
+      <div class="area-number">
+        07
+      </div>
 
+      <h3>
+        Creative Direction
+      </h3>
 
-  <div class="work-item">
+      <p>
+        Connecting people, ideas,
+        disciplines and experiences
+        into coherent projects.
+      </p>
 
-    <div class="work-number">
-      08
     </div>
 
-    <h3>
-      Community
-    </h3>
 
-    <p>
-      Developing collaborations and experiences that bring ideas
-      into real-world communities and connect creative work with
-      tangible participation.
-    </p>
+    <div class="area reveal">
+
+      <div class="area-number">
+        08
+      </div>
+
+      <h3>
+        Community
+      </h3>
+
+      <p>
+        Bringing creative ideas into
+        real-world spaces and creating
+        opportunities for participation.
+      </p>
+
+    </div>
 
   </div>
 
 </section>
 
 
-<!-- =========================
-     COLLABORATIONS
-========================= -->
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
-<section class="section">
+<section class="portrait-section" id="about">
 
-  <h2 class="section-title"> Collaboration </h2> <div class="text"> <p> Much of my work develops through relationships and collaboration. </p> <p> Through GhViƆɔ, I have worked with creatives including DJ Bravoh, Louis Mulema of ICapture Portraits and Roy of The Clicks of Life, bringing together sound, photography, visual culture and creative expression. </p> <p> I am interested in bringing different strengths together to create work that could not exist through one discipline alone. </p> <p> This extends to organisations, communities, athletes, designers, entrepreneurs and people building across different fields. </p>
+  <div class="container portrait-grid">
 
-</div>
+    <div class="portrait image-reveal">
+
+      <img
+        src="img/n33.JPG"
+        alt="Onyango Victor"
+      >
+
+    </div>
+
+
+    <div class="portrait-copy">
+
+      <div class="eyebrow reveal">
+        About
+      </div>
+
+      <h2 class="reveal">
+
+        Built between
+        precision and
+        expression.
+
+      </h2>
+
+
+      <p class="reveal">
+
+        Professionally trained in Automotive Engineering,
+        I developed a way of thinking shaped by systems,
+        precision, problem-solving and durability.
+
+      </p>
+
+
+      <p class="reveal">
+
+        Outside engineering, my interests have moved through
+        fashion, art, photography, music, sport, food and
+        community.
+
+      </p>
+
+
+      <p class="reveal">
+
+        GhViƆɔ became a place where those interests could
+        intersect — and the work continues to evolve from there.
+
+      </p>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      SELECTED WORK
-========================= -->
+===================================================== -->
 
-<section class="section">
+<section class="work">
 
-  <h2 class="section-title"> Selected Work </h2> <div class="text"> <p> My work continues to develop across different environments — from cultural projects and creative collaborations to food, entrepreneurship, technical work and community experiences. </p> <p> Rather than treating each project as separate, I see them as part of a broader process of learning, experimenting, building relationships and turning ideas into tangible work. </p>
+  <div class="container">
 
-  </div>
+    <div class="work-heading">
 
-  <div class="grid">
+      <div class="eyebrow reveal">
+        Selected work
+      </div>
 
-    <div class="image">
-      <img
-        src="img/4.jpg"
-        alt="Selected creative work"
-      >
+      <h2 class="section-heading reveal">
+
+        Things built,
+        explored,
+        experienced.
+
+      </h2>
+
     </div>
 
-    <div class="image">
-      <img
-        src="img/44.jpg"
-        alt="Selected creative work"
-      >
+
+    <!-- PROJECT 01 -->
+
+    <div class="work-item reveal">
+
+      <div class="work-image image-reveal">
+
+        <img
+          src="img/4.jpg"
+          alt="GhViƆɔ"
+        >
+
+      </div>
+
+
+      <div class="work-info">
+
+        <div class="eyebrow">
+          01 / Creative Platform
+        </div>
+
+        <h3>
+          GhViƆɔ
+        </h3>
+
+        <p>
+
+          A cultural platform connecting fashion,
+          photography, music, sport, art and community.
+
+        </p>
+
+
+        <a
+          href="https://ghvicc.github.io/GhViCc-/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Explore GhViƆɔ →
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- PROJECT 02 -->
+
+    <div class="work-item reverse reveal">
+
+      <div class="work-image image-reveal">
+
+        <img
+          src="img/44.jpg"
+          alt="kenny Fries"
+        >
+
+      </div>
+
+
+      <div class="work-info">
+
+        <div class="eyebrow">
+          02 / Food & Hospitality
+        </div>
+
+        <h3>
+          kenny Fries
+        </h3>
+
+        <p>
+
+          A food venture exploring comfort,
+          street-side energy, community and
+          customer experience.
+
+        </p>
+
+
+        <a
+          href="https://kenny-fries.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit kenny Fries →
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- PROJECT 03 -->
+
+    <div class="work-item reveal">
+
+      <div class="work-image image-reveal">
+
+        <img
+          src="img/55.jpg"
+          alt="Creative collaboration"
+        >
+
+      </div>
+
+
+      <div class="work-info">
+
+        <div class="eyebrow">
+          03 / Collaboration
+        </div>
+
+        <h3>
+          People & Ideas
+        </h3>
+
+        <p>
+
+          Working with photographers, musicians,
+          designers, athletes, makers and communities
+          to bring different perspectives together.
+
+        </p>
+
+      </div>
+
     </div>
 
   </div>
@@ -1012,140 +2451,303 @@ footer p{
 </section>
 
 
-<!-- =========================
-     CONNECT
-========================= -->
+<!-- =====================================================
+     FINAL VISUAL
+===================================================== -->
 
-<section class="section">
+<section class="final-visual">
 
-  <h2 class="section-title">
-    Connect
-  </h2>
-
-  <div class="text">
-
-    <p>
-      I am interested in working with designers, engineers,
-      artists, musicians, photographers, athletes, makers,
-      cultural thinkers, organisations, entrepreneurs and
-      communities.
-    </p>
-
-    <p>
-      If you are building something meaningful, exploring an idea,
-      creating culture or looking for people with whom to build,
-      let's start a conversation.
-    </p>
-
-  </div>
-
-
-  <div class="actions">
-
-  <a
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=onyango378@gmail.com"
-    class="btn primary"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Start Collaboration
-  </a>
-
-</div>
-
-
-  <!-- SOCIALS -->
-
-  <div class="social-wrap">
-
-    <a
-      class="social"
-      href="https://www.instagram.com/onyhi_ghama/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Instagram"
-    >
-      <img
-        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
-        alt="Instagram"
-      >
-    </a>
-
-
-    <a
-      class="social"
-      href="https://www.pinterest.com/ghvicc/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Pinterest"
-    >
-      <img
-        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/pinterest.svg"
-        alt="Pinterest"
-      >
-    </a>
-
-
-    <a
-      class="social"
-      href="https://linktr.ee/ghvicc"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Linktree"
-    >
-      <img
-        src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linktree.svg"
-        alt="Linktree"
-      >
-    </a>
-
-
-    <a
-  class="social"
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=onyango378@gmail.com"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Email GhViƆɔ"
->
   <img
-    src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg"
-    alt="Email"
-  />
-</a>
+    src="img/3.jpg"
+    alt="GhViƆɔ"
+  >
+
+  <div class="final-overlay">
+
+    <h2>
+      Keep building.
+    </h2>
 
   </div>
 
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
+     CONNECT
+===================================================== -->
+
+<section class="connect">
+
+  <div class="container connect-inner">
+
+    <div class="eyebrow reveal">
+      Let's make something
+    </div>
+
+    <h2 class="reveal">
+      Connect.
+    </h2>
+
+    <p class="reveal">
+
+      For collaborations, creative projects,
+      cultural ideas, technical work or simply
+      a conversation about something you're building.
+
+    </p>
+
+
+    <div class="connect-actions reveal">
+
+      <a
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=onyango378@gmail.com"
+        class="connect-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Start a conversation
+      </a>
+
+
+      <a
+        href="https://ghvicc.github.io/GhViCc-/"
+        class="connect-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Visit GhViƆɔ
+      </a>
+
+    </div>
+
+
+    <!-- SOCIAL ICONS -->
+
+    <div class="socials reveal">
+
+
+      <!-- INSTAGRAM -->
+
+      <a
+        class="social"
+        href="https://www.instagram.com/onyhi_ghama/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        title="Instagram"
+      >
+
+        <img
+          src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
+          alt=""
+        >
+
+      </a>
+
+
+      <!-- PINTEREST -->
+
+      <a
+        class="social"
+        href="https://www.pinterest.com/ghvicc/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Pinterest"
+        title="Pinterest"
+      >
+
+        <img
+          src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/pinterest.svg"
+          alt=""
+        >
+
+      </a>
+
+
+      <!-- LINKTREE -->
+
+      <a
+        class="social"
+        href="https://linktr.ee/ghvicc"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Linktree"
+        title="Linktree"
+      >
+
+        <img
+          src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linktree.svg"
+          alt=""
+        >
+
+      </a>
+
+
+      <!-- GMAIL -->
+
+      <a
+        class="social"
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=onyango378@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Email"
+        title="Email"
+      >
+
+        <img
+          src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg"
+          alt=""
+        >
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
-  <p>
-    Nairobi • Kenya • East Africa
-  </p>
+  <div class="footer-inner">
 
-  <p style="margin-top:14px;">
-    © 2026 GhViƆɔ. All rights reserved.
-  </p>
+    <span>
+      Nairobi · Kenya · East Africa
+    </span>
 
-  <p style="margin-top:6px;">
-    Onyango Victor — Founder
-  </p>
+    <span>
+      © 2026 GhViƆɔ
+    </span>
+
+    <span>
+      Onyango Victor
+    </span>
+
+  </div>
 
 </footer>
 
 
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script>
 
-function toggleTheme(){
-  document.body.classList.toggle("light");
-}
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements = document.querySelectorAll(
+  '.reveal, .image-reveal'
+);
+
+const observer = new IntersectionObserver(
+
+  (entries) => {
+
+    entries.forEach((entry) => {
+
+      if(entry.isIntersecting){
+
+        entry.target.classList.add('visible');
+
+        observer.unobserve(entry.target);
+
+      }
+
+    });
+
+  },
+
+  {
+    threshold:0.12,
+    rootMargin:'0px 0px -50px 0px'
+  }
+
+);
+
+
+revealElements.forEach((element) => {
+
+  observer.observe(element);
+
+});
+
+
+/* =========================================================
+   HERO IMAGE PARALLAX
+========================================================= */
+
+const heroImage = document.querySelector('.hero-image');
+
+window.addEventListener(
+  'scroll',
+  () => {
+
+    if(!heroImage) return;
+
+    const scroll = window.scrollY;
+
+    if(scroll < window.innerHeight){
+
+      heroImage.style.transform =
+        `translateY(${scroll * 0.08}px) rotate(3deg)`;
+
+    }
+
+  },
+  { passive:true }
+);
+
+
+/* =========================================================
+   SUBTLE COLLAGE MOVEMENT
+========================================================= */
+
+const collage = document.querySelector('.collage');
+
+window.addEventListener(
+  'scroll',
+  () => {
+
+    if(!collage) return;
+
+    const rect = collage.getBoundingClientRect();
+
+    if(
+      rect.top < window.innerHeight &&
+      rect.bottom > 0
+    ){
+
+      const progress =
+        (window.innerHeight - rect.top) /
+        (window.innerHeight + rect.height);
+
+      const title =
+        document.querySelector('.collage-title');
+
+      if(title){
+
+        title.style.transform =
+          `translate(-50%, calc(-50% + ${progress * 30}px))`;
+
+      }
+
+    }
+
+  },
+  { passive:true }
+);
 
 </script>
+
 
 </body>
 </html>
